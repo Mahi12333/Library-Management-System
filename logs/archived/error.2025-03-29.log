@@ -1,0 +1,204 @@
+2025-03-29 23:52:59 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-29 23:52:59 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - Starting LibraryManagementSystemApplication using Java 21.0.6 with PID 17180 (C:\Users\user\Java Notes\Library Management System\target\classes started by Mahitosh in C:\Users\user\Java Notes\Library Management System)
+2025-03-29 23:52:59 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - The following 1 profile is active: "dev"
+2025-03-29 23:52:59 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-29 23:52:59 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-29 23:53:02 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-29 23:53:02 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 238 ms. Found 7 JPA repository interfaces.
+2025-03-29 23:53:05 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5001 (http)
+2025-03-29 23:53:05 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-5001"]
+2025-03-29 23:53:05 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-29 23:53:05 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-29 23:53:05 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-29 23:53:05 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6465 ms
+2025-03-29 23:53:06 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-29 23:53:06 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-29 23:53:06 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-29 23:53:07 [restartedMain] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-03-29 23:53:07 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-29 23:53:07 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-29 23:53:08 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@19203a70
+2025-03-29 23:53:08 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-29 23:53:09 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-29 23:53:12 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-29 23:53:12 [restartedMain] DEBUG org.hibernate.SQL - create table method_execution_logs (id bigint not null auto_increment, created_at datetime(6), executed_by varchar(255), execution_time bigint, method_name varchar(255), parameters TEXT, return_value TEXT, primary key (id)) engine=InnoDB
+2025-03-29 23:53:12 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-29 23:53:14 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-03-29 23:53:14 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-29 23:53:15 [restartedMain] INFO  o.l.security.WebSecurityConfig - Security Configuration Loaded Successfully
+2025-03-29 23:53:15 [restartedMain] INFO  o.l.security.WebSecurityConfig - webSecurityCustomizer-----
+2025-03-29 23:53:15 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v2/api-docs'], Ant [pattern='/v2/api-docs']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-03-29 23:53:15 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-03-29 23:53:15 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-03-29 23:53:15 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-03-29 23:53:15 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-03-29 23:53:15 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui.html'], Ant [pattern='/swagger-ui.html']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-03-29 23:53:16 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-03-29 23:53:16 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-5001"]
+2025-03-29 23:53:16 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5001 (http) with context path '/'
+2025-03-29 23:53:16 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - Started LibraryManagementSystemApplication in 19.702 seconds (process running for 21.792)
+2025-03-29 23:53:17 [restartedMain] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-03-29 23:53:17 [restartedMain] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-03-29 23:53:17 [restartedMain] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-03-29 23:53:17 [restartedMain] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-03-29 23:53:17 [restartedMain] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-03-29 23:53:17 [restartedMain] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-03-29 23:53:50 [http-nio-5001-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-29 23:53:50 [http-nio-5001-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-29 23:53:50 [http-nio-5001-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-03-29 23:53:51 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-03-29 23:53:51 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.email=? limit ?
+2025-03-29 23:53:51 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:53:52 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - insert into users (account_expiry_date,account_non_expired,account_non_locked,address,agree_marketing_material,country_code,created_date,credentials_expiry_date,credentials_non_expired,email,enabled,fcm_token,id_proof,is_two_factor_enabled,is_verified,modified_date,password,phone_number,profile,sign_up_method,status,term_condition_material,two_factor_secret,username) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-03-29 23:53:52 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-03-29 23:53:52 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:53:52 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - insert into user_role_mappings (assigned_at,role_id,user_id) values (?,?,?)
+2025-03-29 23:57:36 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-29 23:57:36 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-29 23:57:36 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-29 23:57:36 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-29 23:57:36 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-03-29 23:57:43 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-29 23:57:43 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - Starting LibraryManagementSystemApplication using Java 21.0.6 with PID 9512 (C:\Users\user\Java Notes\Library Management System\target\classes started by Mahitosh in C:\Users\user\Java Notes\Library Management System)
+2025-03-29 23:57:43 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - The following 1 profile is active: "dev"
+2025-03-29 23:57:43 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-29 23:57:43 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-29 23:57:46 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-29 23:57:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 259 ms. Found 7 JPA repository interfaces.
+2025-03-29 23:57:49 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5001 (http)
+2025-03-29 23:57:49 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-5001"]
+2025-03-29 23:57:49 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-29 23:57:49 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-29 23:57:49 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-29 23:57:49 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5821 ms
+2025-03-29 23:57:50 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-29 23:57:50 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-29 23:57:50 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-29 23:57:50 [restartedMain] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-03-29 23:57:51 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-29 23:57:51 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-29 23:57:52 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@19203a70
+2025-03-29 23:57:52 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-29 23:57:53 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-29 23:57:56 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-29 23:57:56 [restartedMain] DEBUG org.hibernate.SQL - alter table book_fines drop foreign key FKnlpykc4v786w8gxhllvb5g3wk
+2025-03-29 23:57:56 [restartedMain] DEBUG org.hibernate.SQL - alter table book_fines drop foreign key FKsagn450a5mjw20m3wuemi70dv
+2025-03-29 23:57:56 [restartedMain] DEBUG org.hibernate.SQL - alter table book_transactions drop foreign key FKo7xsbd8dvn5d9v5scvd3qnqex
+2025-03-29 23:57:56 [restartedMain] DEBUG org.hibernate.SQL - alter table book_transactions drop foreign key FKg7g0fd98s6stuwtv1ow8pnofy
+2025-03-29 23:57:56 [restartedMain] DEBUG org.hibernate.SQL - alter table borrowed_books drop foreign key FKirp80rty69v7va8179fdkbrls
+2025-03-29 23:57:56 [restartedMain] DEBUG org.hibernate.SQL - alter table borrowed_books drop foreign key FKgb3nt8115pif6g34654k63ltj
+2025-03-29 23:57:56 [restartedMain] DEBUG org.hibernate.SQL - alter table borrowed_books drop foreign key FKrgyccjw7gld60xr4k99wa20gu
+2025-03-29 23:57:56 [restartedMain] DEBUG org.hibernate.SQL - alter table password_reset_tokens drop foreign key FKk3ndxg5xp6v7wd4gjyusp15gq
+2025-03-29 23:57:56 [restartedMain] DEBUG org.hibernate.SQL - alter table user_role_mappings drop foreign key FKqwoptivmgo9o0f8gcfpipuopo
+2025-03-29 23:57:56 [restartedMain] DEBUG org.hibernate.SQL - alter table user_role_mappings drop foreign key FK3usl2rbtadr5r5j0fb7j1q9up
+2025-03-29 23:57:56 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists audit_logs
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists book_fines
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists book_transactions
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists books
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists borrowed_books
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists db_log_entry
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists method_execution_logs
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists password_reset_tokens
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists roles
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists user_role_mappings
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists users
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - create table audit_logs (created_date datetime(6), id bigint not null auto_increment, modified_date datetime(6), timestamp datetime(6), changes TEXT, entity_id varchar(255), entity_name varchar(255), modified_by varchar(255), operation varchar(255), primary key (id)) engine=InnoDB
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - create table book_fines (amount decimal(38,2) not null, paid bit not null, book_id bigint, created_at datetime(6), id bigint not null auto_increment, user_id bigint not null, primary key (id)) engine=InnoDB
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - create table book_transactions (book_id bigint, id bigint not null auto_increment, transaction_time datetime(6), user_id bigint, transaction_type enum ('BORROW','RESERVE','RETURN') not null, primary key (id)) engine=InnoDB
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - create table books (created_at datetime(6), id bigint not null auto_increment, isbn varchar(20) not null, author varchar(255) not null, title varchar(255) not null, status enum ('AVAILABLE','BORROWED') not null, primary key (id)) engine=InnoDB
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - create table borrowed_books (due_date date not null, returned_at date, book_id bigint not null, borrowed_at datetime(6), fine_id bigint, id bigint not null auto_increment, user_id bigint not null, primary key (id)) engine=InnoDB
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - create table db_log_entry (created_date datetime(6) not null, id bigint not null auto_increment, status bigint, timestamp datetime(6) not null, action varchar(255), method varchar(255), principal varchar(255), table_name varchar(255), url varchar(255), primary key (id)) engine=InnoDB
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - create table method_execution_logs (created_at datetime(6), execution_time bigint, id bigint not null auto_increment, executed_by varchar(255), method_name varchar(255), parameters TEXT, return_value TEXT, primary key (id)) engine=InnoDB
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - create table password_reset_tokens (used bit not null, created_date datetime(6) not null, expiry_date datetime(6) not null, id bigint not null auto_increment, modified_date datetime(6) not null, user_id bigint not null, token varchar(255) not null, primary key (id)) engine=InnoDB
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - create table roles (id bigint not null auto_increment, role_name enum ('ROLE_ADMIN','ROLE_SELLER','ROLE_STUDENT'), primary key (id)) engine=InnoDB
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - create table user_role_mappings (assigned_at datetime(6), id bigint not null auto_increment, role_id bigint not null, user_id bigint not null, primary key (id)) engine=InnoDB
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - create table users (account_expiry_date date, account_non_expired bit, account_non_locked bit, credentials_expiry_date date, credentials_non_expired bit, enabled bit, is_two_factor_enabled bit, is_verified bit not null, created_date datetime(6) not null, id bigint not null auto_increment, modified_date datetime(6) not null, agree_marketing_material varchar(255), country_code varchar(255), email varchar(255) not null, fcm_token varchar(255), id_proof varchar(255), password varchar(255) not null, phone_number varchar(255), profile varchar(255), sign_up_method varchar(255), term_condition_material varchar(255), two_factor_secret varchar(255), username varchar(255) not null, address tinytext, status enum ('ACTIVE','BANNED','INACTIVE','PENDING','SUSPENDED'), primary key (id)) engine=InnoDB
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - alter table books add constraint UKkibbepcitr0a3cpk3rfr7nihn unique (isbn)
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - alter table borrowed_books add constraint UKed8315hfmke35h54rftwbubwx unique (fine_id)
+2025-03-29 23:57:57 [restartedMain] DEBUG org.hibernate.SQL - alter table password_reset_tokens add constraint UK71lqwbwtklmljk3qlsugr1mig unique (token)
+2025-03-29 23:57:58 [restartedMain] DEBUG org.hibernate.SQL - alter table users add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique (email)
+2025-03-29 23:57:58 [restartedMain] DEBUG org.hibernate.SQL - alter table book_fines add constraint FKnlpykc4v786w8gxhllvb5g3wk foreign key (book_id) references books (id)
+2025-03-29 23:57:58 [restartedMain] DEBUG org.hibernate.SQL - alter table book_fines add constraint FKsagn450a5mjw20m3wuemi70dv foreign key (user_id) references users (id)
+2025-03-29 23:57:58 [restartedMain] DEBUG org.hibernate.SQL - alter table book_transactions add constraint FKo7xsbd8dvn5d9v5scvd3qnqex foreign key (book_id) references books (id)
+2025-03-29 23:57:58 [restartedMain] DEBUG org.hibernate.SQL - alter table book_transactions add constraint FKg7g0fd98s6stuwtv1ow8pnofy foreign key (user_id) references users (id)
+2025-03-29 23:57:58 [restartedMain] DEBUG org.hibernate.SQL - alter table borrowed_books add constraint FKirp80rty69v7va8179fdkbrls foreign key (book_id) references books (id)
+2025-03-29 23:57:58 [restartedMain] DEBUG org.hibernate.SQL - alter table borrowed_books add constraint FKgb3nt8115pif6g34654k63ltj foreign key (fine_id) references book_fines (id)
+2025-03-29 23:57:58 [restartedMain] DEBUG org.hibernate.SQL - alter table borrowed_books add constraint FKrgyccjw7gld60xr4k99wa20gu foreign key (user_id) references users (id)
+2025-03-29 23:57:58 [restartedMain] DEBUG org.hibernate.SQL - alter table password_reset_tokens add constraint FKk3ndxg5xp6v7wd4gjyusp15gq foreign key (user_id) references users (id)
+2025-03-29 23:57:58 [restartedMain] DEBUG org.hibernate.SQL - alter table user_role_mappings add constraint FKqwoptivmgo9o0f8gcfpipuopo foreign key (role_id) references roles (id)
+2025-03-29 23:57:59 [restartedMain] DEBUG org.hibernate.SQL - alter table user_role_mappings add constraint FK3usl2rbtadr5r5j0fb7j1q9up foreign key (user_id) references users (id)
+2025-03-29 23:57:59 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-29 23:58:00 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-03-29 23:58:01 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-29 23:58:02 [restartedMain] INFO  o.l.security.WebSecurityConfig - Security Configuration Loaded Successfully
+2025-03-29 23:58:02 [restartedMain] INFO  o.l.security.WebSecurityConfig - webSecurityCustomizer-----
+2025-03-29 23:58:02 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v2/api-docs'], Ant [pattern='/v2/api-docs']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-03-29 23:58:02 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-03-29 23:58:02 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-03-29 23:58:02 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-03-29 23:58:02 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-03-29 23:58:02 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui.html'], Ant [pattern='/swagger-ui.html']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-03-29 23:58:03 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-03-29 23:58:03 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-5001"]
+2025-03-29 23:58:03 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5001 (http) with context path '/'
+2025-03-29 23:58:03 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - Started LibraryManagementSystemApplication in 21.832 seconds (process running for 23.976)
+2025-03-29 23:58:03 [restartedMain] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-03-29 23:58:04 [restartedMain] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:58:04 [restartedMain] DEBUG org.hibernate.SQL - insert into roles (role_name) values (?)
+2025-03-29 23:58:04 [restartedMain] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-03-29 23:58:04 [restartedMain] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:58:04 [restartedMain] DEBUG org.hibernate.SQL - insert into roles (role_name) values (?)
+2025-03-29 23:58:04 [restartedMain] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-03-29 23:58:04 [restartedMain] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:58:04 [restartedMain] DEBUG org.hibernate.SQL - insert into roles (role_name) values (?)
+2025-03-29 23:58:04 [restartedMain] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-03-29 23:58:04 [restartedMain] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:58:04 [restartedMain] DEBUG org.hibernate.SQL - insert into users (account_expiry_date,account_non_expired,account_non_locked,address,agree_marketing_material,country_code,created_date,credentials_expiry_date,credentials_non_expired,email,enabled,fcm_token,id_proof,is_two_factor_enabled,is_verified,modified_date,password,phone_number,profile,sign_up_method,status,term_condition_material,two_factor_secret,username) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-03-29 23:58:05 [restartedMain] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:58:05 [restartedMain] DEBUG org.hibernate.SQL - insert into user_role_mappings (assigned_at,role_id,user_id) values (?,?,?)
+2025-03-29 23:58:05 [restartedMain] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-03-29 23:58:05 [restartedMain] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:58:05 [restartedMain] DEBUG org.hibernate.SQL - insert into users (account_expiry_date,account_non_expired,account_non_locked,address,agree_marketing_material,country_code,created_date,credentials_expiry_date,credentials_non_expired,email,enabled,fcm_token,id_proof,is_two_factor_enabled,is_verified,modified_date,password,phone_number,profile,sign_up_method,status,term_condition_material,two_factor_secret,username) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-03-29 23:58:05 [restartedMain] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:58:05 [restartedMain] DEBUG org.hibernate.SQL - insert into user_role_mappings (assigned_at,role_id,user_id) values (?,?,?)
+2025-03-29 23:58:05 [restartedMain] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-03-29 23:58:06 [restartedMain] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:58:06 [restartedMain] DEBUG org.hibernate.SQL - insert into users (account_expiry_date,account_non_expired,account_non_locked,address,agree_marketing_material,country_code,created_date,credentials_expiry_date,credentials_non_expired,email,enabled,fcm_token,id_proof,is_two_factor_enabled,is_verified,modified_date,password,phone_number,profile,sign_up_method,status,term_condition_material,two_factor_secret,username) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-03-29 23:58:06 [restartedMain] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:58:06 [restartedMain] DEBUG org.hibernate.SQL - insert into user_role_mappings (assigned_at,role_id,user_id) values (?,?,?)
+2025-03-29 23:59:25 [http-nio-5001-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-29 23:59:25 [http-nio-5001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-29 23:59:25 [http-nio-5001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-03-29 23:59:25 [http-nio-5001-exec-1] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-03-29 23:59:25 [http-nio-5001-exec-1] ERROR o.l.e.MyGlobalExceptionHandler - APIException---- Username is already taken!
+2025-03-29 23:59:25 [http-nio-5001-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.librarymanagementsystem.exception.APIException: Username is already taken!]
+2025-03-29 23:59:36 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-03-29 23:59:36 [http-nio-5001-exec-2] ERROR o.l.e.MyGlobalExceptionHandler - APIException---- Username is already taken!
+2025-03-29 23:59:36 [http-nio-5001-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.librarymanagementsystem.exception.APIException: Username is already taken!]
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.email=? limit ?
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - insert into users (account_expiry_date,account_non_expired,account_non_locked,address,agree_marketing_material,country_code,created_date,credentials_expiry_date,credentials_non_expired,email,enabled,fcm_token,id_proof,is_two_factor_enabled,is_verified,modified_date,password,phone_number,profile,sign_up_method,status,term_condition_material,two_factor_secret,username) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - insert into user_role_mappings (assigned_at,role_id,user_id) values (?,?,?)
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - insert into user_role_mappings (assigned_at,role_id,user_id) values (?,?,?)
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-03-29 23:59:45 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - insert into user_role_mappings (assigned_at,role_id,user_id) values (?,?,?)

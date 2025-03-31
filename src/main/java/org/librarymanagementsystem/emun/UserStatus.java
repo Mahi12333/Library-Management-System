@@ -1,4 +1,9 @@
 package org.librarymanagementsystem.emun;
 
-public enum userStatus {
+public enum UserStatus {
+    ACTIVE,
+    INACTIVE,
+    PENDING,
+    BANNED,
+    SUSPENDED
 }

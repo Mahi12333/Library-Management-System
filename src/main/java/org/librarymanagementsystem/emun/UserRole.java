@@ -1,4 +1,7 @@
 package org.librarymanagementsystem.emun;
 
-public enum userRole {
+public enum UserRole {
+    ROLE_STUDENT,
+    ROLE_SELLER,
+    ROLE_ADMIN
 }

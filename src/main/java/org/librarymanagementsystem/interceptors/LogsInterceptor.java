@@ -22,7 +22,7 @@ public class LogsInterceptor implements HandlerInterceptor {
         String url = request.getRequestURI();
         String principal = (request.getUserPrincipal() != null) ? request.getUserPrincipal().getName() : "Anonymous";
         // Log the request
-        log.info("REQUEST: User={}, Method={}, URI={}", principal, method, url);
+        log.info("REQUEST: User={}, Method={}, URL={}", principal, method, url);
 
         if (authorizationHeader != null && (method.equals("POST") || method.equals("PUT") || method.equals("DELETE")) && !url.endsWith("error")) {
             String[] pathParts = url.split("/");
@@ -58,7 +58,7 @@ public class LogsInterceptor implements HandlerInterceptor {
         String principal = (request.getUserPrincipal() != null) ? request.getUserPrincipal().getName() : "Anonymous";
 
         // Log the response
-        log.info("RESPONSE: User={}, Method={}, URL={}, Status={}", principal, method, url, status);
+        log.info("POST-RESPONSE: User={}, Method={}, URL={}, Status={}", principal, method, url, status);
         // Log asynchronously to DB
         //loggerService.createLogAsync(method, principal, url, status);
     }

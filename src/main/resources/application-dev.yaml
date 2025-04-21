@@ -6,7 +6,7 @@ spring:
     JWT_ACCESS_SECRET_KEY: mySecretKeyspkmndfsopkvajoirjgfpfngmoknmaccessToken
     JWT_REFRESH_SECRET_KEY: mySe12738aopsgjnspderewtekmndfsopkvajoirjg9438357437348763refreshToken
     jwtExpirationMs: 1200000
-    jwtRefreshExpirationMs: 3600000
+    jwtRefreshExpirationMs: 1800000
 
 #  profiles:
 #    active: dev  # Development Mode
@@ -20,9 +20,12 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
+      show-sql: true
+      format_sql: true
+  show-sql: true
 
-#  servlet:
+  #  servlet:
 #    multipart:
 #      enabled: true  # Enable multipart uploads
 #      file-size-threshold: 2KB  # Threshold after which files are written to disk
@@ -51,6 +54,8 @@ spring:
           starttls:
             enable: true
 
+      domain_name: "Library"
+
 springdoc:
   swagger-ui:
     enabled: true  # Enable Swagger UI
@@ -71,8 +76,11 @@ logging:
   level:
     root: INFO
     org.hibernate.SQL: DEBUG
+    org.hibernate.engine.internal.Cascade: TRACE  # Use for check any on Cascade of entity
     org.type.descriptor: DEBUG
     org.springframework.web: INFO
+    org.springframework.transaction: DEBUG   # Use for check any on transition
+    org.springframework.orm.jpa.JpaTransactionManager: DEBUG # Use for check any on transition
     com.example.librarymanagement: DEBUG
   file:
     name: logs/application.log

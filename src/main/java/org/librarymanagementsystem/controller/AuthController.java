@@ -26,6 +26,7 @@ import org.librarymanagementsystem.security.request.SignupDTO;
 import org.librarymanagementsystem.security.response.LoginResponse;
 import org.librarymanagementsystem.security.response.UserInfoResponse;
 import org.librarymanagementsystem.security.service.UserDetailsImpl;
+import org.librarymanagementsystem.services.RefreshTokenService;
 import org.librarymanagementsystem.services.UserService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -63,10 +64,10 @@ public class AuthController {
     private final UserService userService;
     private final UserMapper userMapper;
     private final RefreshTokenRepository refreshTokenRepository;
+    private final RefreshTokenService refreshTokenService;
 
     @Value("${spring.app.jwtRefreshExpirationMs}")
     private int jwtRefreshExpirationMs;
-
 
     @Operation(summary = "Create a user-signing ", description = "This API is used to user-signin")
     @PostMapping("/user-login")
@@ -78,14 +79,13 @@ public class AuthController {
         log.info("authentication-- {}",authentication);
         SecurityContextHolder.getContext().setAuthentication(authentication);
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-
         String accessToken = jwtUtils.generateAccessToken(userDetails.getId());
         String refreshToken = jwtUtils.generateRefreshToken(userDetails.getId());
-        refreshTokenRepository.deleteByUserId(userDetails.getId());
+        refreshTokenService.deleteByUserId(userDetails.getId());
         RefreshToken refreshTokenEntity = new RefreshToken();
         refreshTokenEntity.setUserId(userDetails.getId());
         refreshTokenEntity.setToken(refreshToken);
-        refreshTokenEntity.setExpiryDate(Instant.now().plus(Duration.ofMinutes(jwtRefreshExpirationMs))); // Set expiry to 7 days
+        refreshTokenEntity.setExpiryDate(Instant.now().plus(Duration.ofMillis(jwtRefreshExpirationMs))); // Set expiry to 7 days
         refreshTokenRepository.save(refreshTokenEntity);
 
         LoginResponse response = new LoginResponse(accessToken, refreshToken, userDetails);
@@ -93,28 +93,28 @@ public class AuthController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-
     @Operation(summary = "Create a user-refresh ", description = "This API is used to user-resfresh")
     @PostMapping("/refresh")
     public ResponseEntity<?> refreshAccessToken(@RequestHeader("Authorization") String refreshTokenHeader) {
+        log.info("refreshTokenHeader--{}",refreshTokenHeader);
         if (refreshTokenHeader == null || !refreshTokenHeader.startsWith("Bearer ")) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Invalid Refresh Token");
         }
 
         String refreshToken = refreshTokenHeader.substring(7);
-
+        log.info("storedToken-- {}",refreshToken);
         // ✅ Check if token exists in DB
-        RefreshToken storedToken = refreshTokenRepository.findByToken(refreshToken)
+        RefreshToken storedToken = refreshTokenService.findByToken(refreshToken)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.FORBIDDEN, "Invalid or Expired Refresh Token"));
-
+//        log.info("storedToken-- {}",storedToken);
         // ✅ Validate JWT Signature & Expiry
         if (!jwtUtils.validateJwtToken(refreshToken, true)) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Invalid or Expired Refresh Token");
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Expired or Invalid Refresh Token");
         }
 
         // ✅ Check Expiry
         if (storedToken.getExpiryDate().isBefore(Instant.now())) {
-            refreshTokenRepository.deleteByUserId(storedToken.getUserId()); // Remove expired token
+            refreshTokenService.deleteByUserId(storedToken.getUserId()); // Remove expired token
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Refresh Token Expired. Please log in again.");
         }
 
@@ -125,7 +125,7 @@ public class AuthController {
 
         // ✅ Update refresh token in DB
         storedToken.setToken(newRefreshToken);
-        storedToken.setExpiryDate(Instant.now().plus(Duration.ofMinutes(jwtRefreshExpirationMs))); // Example: 7 days expiry
+        storedToken.setExpiryDate(Instant.now().plus(Duration.ofMillis(jwtRefreshExpirationMs))); // Example: 7 days expiry
         refreshTokenRepository.save(storedToken);
 
         // ✅ Return new tokens
@@ -135,7 +135,6 @@ public class AuthController {
 
         return ResponseEntity.ok(tokens);
     }
-
 
     @Operation(summary = "Create a Admin-signing ", description = "This API is used to Admin-signing")
     @PostMapping("/admin-login")
@@ -150,19 +149,18 @@ public class AuthController {
         String accessToken = jwtUtils.generateAccessToken(userDetails.getId());
         String refreshToken = jwtUtils.generateRefreshToken(userDetails.getId());
 
-        refreshTokenRepository.deleteByUserId(userDetails.getId());
+        refreshTokenService.deleteByUserId(userDetails.getId());
         // ✅ Save Refresh Token in Database
         RefreshToken refreshTokenEntity = new RefreshToken();
         refreshTokenEntity.setUserId(userDetails.getId());
         refreshTokenEntity.setToken(refreshToken);
-        refreshTokenEntity.setExpiryDate(Instant.now().plus(Duration.ofMinutes(jwtRefreshExpirationMs))); // Set expiry to 7 days
+        refreshTokenEntity.setExpiryDate(Instant.now().plus(Duration.ofMillis(jwtRefreshExpirationMs))); // Set expiry to 7 days
         refreshTokenRepository.save(refreshTokenEntity);
 
         LoginResponse response = new LoginResponse(accessToken, refreshToken, userDetails.getUsername());
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
 
     @Operation(summary = "Create a user-signup ", description = "This API is used to user-signup")
     @PostMapping("/public/signup")
@@ -218,7 +216,7 @@ public class AuthController {
         String accessToken = jwtUtils.generateAccessToken(saveuser.getId());
         String refreshToken = jwtUtils.generateRefreshToken(saveuser.getId());
 
-        refreshTokenRepository.deleteByUserId(saveuser.getId());
+        refreshTokenService.deleteByUserId(saveuser.getId());
         RefreshToken refreshTokenEntity = new RefreshToken();
         refreshTokenEntity.setUserId(saveuser.getId());
         refreshTokenEntity.setToken(refreshToken);
@@ -258,14 +256,14 @@ public class AuthController {
     @PostMapping("/public/forgot-password")
     public ResponseEntity<?> forgotPassword(@Valid @RequestBody ForgotPasswordDTO request) {
         userService.generatePasswordResetToken(request.getEmail());
-        return ResponseEntity.ok( new APIException("Password reset email sent!"));
+        return ResponseEntity.ok("Password reset email sent!");
     }
 
     @Operation(summary = "Reset Password", description = "Resets the password using the token.")
     @PostMapping("/public/reset-password")
     public ResponseEntity<?> resetPasswords(@Valid @RequestBody ResetPasswordDTO request) {
         userService.resetPassword(request.getToken(), request.getNewPassword(), request.getComPassword());
-        return ResponseEntity.ok(new APIException("Password has been reset successfully!"));
+        return ResponseEntity.ok("Password has been reset successfully!");
     }
 
 

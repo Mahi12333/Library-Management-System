@@ -9,14 +9,16 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.librarymanagementsystem.emun.UserRole;
 import org.librarymanagementsystem.exception.APIException;
+import org.librarymanagementsystem.exception.ResourceNotFoundException;
 import org.librarymanagementsystem.model.Role;
 import org.librarymanagementsystem.model.User;
 import org.librarymanagementsystem.repository.RefreshTokenRepository;
 import org.librarymanagementsystem.repository.UserRoleMappingRepository;
 import org.librarymanagementsystem.security.request.UpdatePasswordDTO;
-import org.librarymanagementsystem.security.request.UpdateUserRequest;
+import org.librarymanagementsystem.security.request.UpdateUserDTO;
 import org.librarymanagementsystem.security.response.UserInfoResponse;
 import org.librarymanagementsystem.security.response.UserResponse;
+import org.librarymanagementsystem.services.RefreshTokenService;
 import org.librarymanagementsystem.services.UserService;
 import org.librarymanagementsystem.utils.AuthUtil;
 import org.librarymanagementsystem.utils.constants.ConstantValue;
@@ -45,6 +47,7 @@ public class UserController {
      private final AuthUtil authUtil;
      private final RefreshTokenRepository refreshTokenRepository;
      private final UserRoleMappingRepository userRoleMappingRepository;
+     private final RefreshTokenService refreshTokenService;
 
 
     /*@Operation(summary = "Request Password Reset", description = "Generates a password reset token and sends email.")
@@ -140,39 +143,11 @@ public class UserController {
 
     @SecurityRequirement(name = "bearerAuth")
     @Operation(summary = "User Edit", description = "Edit User details of a specific user.")
-    @PutMapping("/user-updated")
-    public ResponseEntity<?> updateUser(@Valid @RequestBody UpdateUserRequest request) {
-        User user = userService.getUserById(request.getUserId());
-
-        // Update user details
-        user.setUserName(request.getUserName());
-        user.setEmail(request.getEmail());
-        user.setAccountNonLocked(request.getAccountNonLocked());
-        user.setAccountNonExpired(request.getAccountNonExpired());
-        user.setCredentialsNonExpired(request.getCredentialsNonExpired());
-        user.setEnabled(request.getEnabled());
-        user.setIsTwoFactorEnabled(request.getIsTwoFactorEnabled());
-        user.setCredentialsExpiryDate(request.getCredentialsExpiryDate());
-        user.setAccountExpiryDate(request.getAccountExpiryDate());
-        user.setPhone_number(request.getPhone_number());
-        user.setCountry_code(request.getCountry_code());
-        user.setAddress(request.getAddress());
-
-        // Update user roles
-        Set<Role> roles = request.getRoles().stream()
-                .map(roleName -> new Role(UserRole.valueOf(roleName))) // Convert role name to Role object
-                .collect(Collectors.toSet());
-
-//        // Remove old roles and assign new ones
-//        userRoleMappingRepository.deleteByUserId(user.getId()); // Clear old roles
-//        roles.forEach(role -> userRoleMappingRepository.save(new UserRoleMapping(user, role)));
-//
-//        // Save updated user
-//        userService.saveUser(user);
-
-        return new ResponseEntity<>(null, HttpStatus.OK);
+    @PatchMapping("/user-updated")
+    public ResponseEntity<?> updateUser(@Valid @RequestBody UpdateUserDTO request) {
+       UserInfoResponse userResponseDTO = userService.updateUserDetails(request);
+       return new ResponseEntity<>(userResponseDTO, HttpStatus.OK);
     }
-
 
 
     @SecurityRequirement(name = "bearerAuth")
@@ -181,7 +156,7 @@ public class UserController {
     public ResponseEntity<?> updatePassword(@Valid @RequestBody UpdatePasswordDTO request) {
         Long userId = authUtil.loggedInUserId();
         userService.updatePassword(userId, request);
-        return ResponseEntity.ok(new APIException("Password updated successfully!"));
+        return ResponseEntity.ok("Password updated successfully!");
     }
 
     @SecurityRequirement(name = "bearerAuth")
@@ -202,7 +177,6 @@ public class UserController {
                                                              @RequestParam(name = "sortOrder", defaultValue = ConstantValue.SORT_DIR, required = false) String sortOrder) {
         UserResponse userResponse = userService.getallUser(pageNumber, pageSize, sortBy, sortOrder, keyword);
         return new ResponseEntity<>(userResponse, HttpStatus.OK);
-
     }
 
 
@@ -212,9 +186,11 @@ public class UserController {
     public ResponseEntity<?> logout(@RequestHeader("Authorization") String refreshToken) {
         SecurityContextHolder.clearContext();
         String token = refreshToken.substring(7);
-        refreshTokenRepository.deleteByToken(token);
+        refreshTokenService.deleteByToken(token);
         return ResponseEntity.ok(Map.of("message", "Logged out successfully"));
     }
+
+
 
 
 }

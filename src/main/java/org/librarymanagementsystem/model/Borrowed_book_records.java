@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.Date;
 
 
 @Auditable(name = "BorrowedBooks Entity")
@@ -26,23 +27,26 @@ public class Borrowed_book_records {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "book_id", nullable = false)
     private Book book;
 
-    @CreationTimestamp
-    private Timestamp borrowedAt;
 
-    @Column(nullable = false)
-    private LocalDate dueDate;
+    @Column(name = "borrow_at")
+    private Date borrowedAt;
 
-    private LocalDate returnedAt;
+    @Column(name = "due_date", nullable = false)
+    private Date dueDate;
 
-    @OneToOne
+    @Column(name = "return_at", nullable = true)
+    private Date returnAt;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "fine_id")
     private Fines fine;
+
 }

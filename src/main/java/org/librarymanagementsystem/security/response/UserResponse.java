@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserResponse {
-    private List<User> content;
+    private List<UserInfoResponse> content;
     private Integer pageNumber;
     private Integer pageSize;
     private Long totalElements;

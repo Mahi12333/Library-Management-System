@@ -45,7 +45,7 @@ public class DatabaseSeederService implements CommandLineRunner {
                 .orElseGet(() -> roleRepository.save(new Role(UserRole.ROLE_ADMIN)));
 
 
-        createUserIfNotExists("Mahitosh", "mahitoshgiri28@gmail.com", "pass@123", userRole);
+        createUserIfNotExists("Mahitosh", "mahitoshgiri287@gmail.com", "pass@123", userRole);
         createUserIfNotExists("Admin", "admin.runtime@gmail.com", "admin@123", adminRole);
         createUserIfNotExists("Seller", "seller.runtime@gmail.com", "seller@123", sellerRole);
 

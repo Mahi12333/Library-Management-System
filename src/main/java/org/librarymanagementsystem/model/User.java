@@ -4,10 +4,14 @@ package org.librarymanagementsystem.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.librarymanagementsystem.annotation.Auditable;
 import org.librarymanagementsystem.emun.UserStatus;
+import org.springframework.data.annotation.LastModifiedDate;
 
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -19,8 +23,13 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
-public class User extends BaseEntity {
+@Table(name = "users",
+        indexes = {
+                @Index(name = "idx_users_email", columnList = "email"),
+                @Index(name = "idx_users_username", columnList = "username")
+        }
+)
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -53,7 +62,8 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<UserRoleMapping> userRoles = new HashSet<>();
 
-    @Column(name = "idProof", nullable = true)
+    @Lob
+    @Column(name = "id_proof", nullable = true)
     private String idProof;
 
     @ToString.Exclude
@@ -70,6 +80,7 @@ public class User extends BaseEntity {
     @Column(name = "fcm_token", nullable = true)
     private String fcm_token;
 
+    @Lob
     @Column(name = "profile", nullable = true)
     private String profile;
 
@@ -84,7 +95,18 @@ public class User extends BaseEntity {
     private String address;
 
     @Column(name = "is_verified", nullable = false)
-    private Boolean isVerified = false; // Default to false
+    private Boolean isVerified = false;
+
+    @Column(name = "membership_date")
+    private Date membershipDate;
+
+    @CreationTimestamp
+    @Column(name = "createdAt")
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    @Column(name = "updatedAt")
+    private LocalDateTime updatedAt;
 
 
     public User(String userName, String email, String password) {

@@ -2309,3 +2309,29 @@ Consider defining a bean of type 'org.springframework.security.authentication.Au
 2025-04-28 19:10:24 [http-nio-5001-exec-9] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
 2025-04-28 19:10:24 [http-nio-5001-exec-9] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
 2025-04-28 19:10:25 [http-nio-5001-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 757 ms
+2025-04-28 19:11:29 [http-nio-5001-exec-5] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /v1/api/auth/public/signup
+2025-04-28 19:11:29 [http-nio-5001-exec-5] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
+2025-04-28 19:11:29 [http-nio-5001-exec-5] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
+2025-04-28 19:11:30 [http-nio-5001-exec-5] INFO  o.l.interceptors.LogsInterceptor - REQUEST: User=Anonymous, Method=POST, URL=/v1/api/auth/public/signup
+2025-04-28 19:11:30 [http-nio-5001-exec-5] INFO  o.l.interceptors.LogsInterceptor -  Else ACTION LOG: User=Anonymous, Method=POST, Table=v1, Action=api
+2025-04-28 19:11:30 [http-nio-5001-exec-5] ERROR o.l.e.MyGlobalExceptionHandler - HttpMediaTypeNotSupportedException---- Content-Type 'application/octet-stream' is not supported
+2025-04-28 19:11:30 [http-nio-5001-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/octet-stream' is not supported]
+2025-04-28 19:23:23 [http-nio-5001-exec-7] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /v1/api/auth/public/signup
+2025-04-28 19:23:23 [http-nio-5001-exec-7] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
+2025-04-28 19:23:23 [http-nio-5001-exec-7] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
+2025-04-28 19:23:23 [http-nio-5001-exec-7] INFO  o.l.interceptors.LogsInterceptor - REQUEST: User=Anonymous, Method=POST, URL=/v1/api/auth/public/signup
+2025-04-28 19:23:23 [http-nio-5001-exec-7] INFO  o.l.interceptors.LogsInterceptor -  Else ACTION LOG: User=Anonymous, Method=POST, Table=v1, Action=api
+2025-04-28 19:23:23 [http-nio-5001-exec-7] ERROR o.l.e.MyGlobalExceptionHandler - HttpMediaTypeNotSupportedException---- Content-Type 'application/octet-stream' is not supported
+2025-04-28 19:23:23 [http-nio-5001-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/octet-stream' is not supported]
+2025-04-28 19:28:01 [http-nio-5001-exec-3] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /v1/api/auth/public/signup
+2025-04-28 19:28:01 [http-nio-5001-exec-3] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
+2025-04-28 19:28:01 [http-nio-5001-exec-3] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
+2025-04-28 19:28:01 [http-nio-5001-exec-3] INFO  o.l.interceptors.LogsInterceptor - REQUEST: User=Anonymous, Method=POST, URL=/v1/api/auth/public/signup
+2025-04-28 19:28:01 [http-nio-5001-exec-3] INFO  o.l.interceptors.LogsInterceptor -  Else ACTION LOG: User=Anonymous, Method=POST, Table=v1, Action=api
+2025-04-28 19:28:01 [http-nio-5001-exec-3] ERROR o.l.e.MyGlobalExceptionHandler - HttpMediaTypeNotSupportedException---- Content-Type 'application/octet-stream' is not supported
+2025-04-28 19:28:01 [http-nio-5001-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/octet-stream' is not supported]
+2025-04-28 19:42:54 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-28 19:42:54 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-28 19:42:54 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28 19:42:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2025-04-28 19:42:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.

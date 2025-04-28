@@ -1,4 +1,4 @@
-package org.librarymanagementsystem.payload.response.book;
+package org.librarymanagementsystem.payload.response;
 
 
 import lombok.Getter;

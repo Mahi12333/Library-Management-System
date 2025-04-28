@@ -185,8 +185,8 @@ public class UserController {
     @PostMapping("/user-logout")
     public ResponseEntity<?> logout(@RequestHeader("Authorization") String refreshToken) {
         SecurityContextHolder.clearContext();
-        String token = refreshToken.substring(7);
-        refreshTokenService.deleteByToken(token);
+        //   String token = refreshToken.substring(7);
+        //   refreshTokenService.deleteByToken(token);
         return ResponseEntity.ok(Map.of("message", "Logged out successfully"));
     }
 

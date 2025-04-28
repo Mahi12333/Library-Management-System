@@ -4,19 +4,24 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.librarymanagementsystem.emun.TransactionType;
 import org.librarymanagementsystem.exception.APIException;
-import org.librarymanagementsystem.exception.ResourceNotFoundException;
+import org.librarymanagementsystem.mapstruct.BorrowBookMapper;
 import org.librarymanagementsystem.model.*;
-import org.librarymanagementsystem.payload.request.book.BookDTO;
-import org.librarymanagementsystem.payload.request.book.BorrowedBookDTO;
-import org.librarymanagementsystem.payload.response.book.BorrowedBookReturnDTO;
+import org.librarymanagementsystem.payload.request.borrowbook.BorrowedBookDTO;
+import org.librarymanagementsystem.payload.response.borrowbook.BorrowBookResponse;
+import org.librarymanagementsystem.payload.response.BorrowBooksDTO;
+import org.librarymanagementsystem.payload.response.borrowbook.BorrowedBookReturnDTO;
 import org.librarymanagementsystem.repository.BookBorrowRepository;
 import org.librarymanagementsystem.repository.BookRepository;
 import org.librarymanagementsystem.repository.FinesRepository;
 import org.librarymanagementsystem.repository.UserRepository;
 import org.librarymanagementsystem.services.BookBorrowService;
-import org.librarymanagementsystem.services.BookService;
 import org.librarymanagementsystem.services.NotificationService;
 import org.librarymanagementsystem.utils.AuthUtil;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,6 +31,7 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -38,6 +44,8 @@ public class BookBorrowImp implements BookBorrowService {
     private final UserRepository userRepository;
     private final FinesRepository finesRepository;
     private final NotificationService notificationService;
+    private final BorrowBookMapper borrowBookMapper;
+
 
     @Transactional
     @Override
@@ -131,6 +139,72 @@ public class BookBorrowImp implements BookBorrowService {
         return null;
     }
 
+    @Override
+    public BorrowBookResponse getAllBorrowings(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String keyword) {
+        // TODO LIST
+        Sort sortByAndOrder = sortOrder.equalsIgnoreCase("asc")
+                ? Sort.by(sortBy).ascending()
+                : Sort.by(sortBy).descending();
+
+        Pageable pageDetails = PageRequest.of(pageNumber, pageSize, sortByAndOrder);
+        Specification<Borrowed_book_records> spec = Specification.where(null);
+
+        if (keyword != null && !keyword.isEmpty()) {
+            spec = spec.and((root, query, criteriaBuilder) ->
+                    criteriaBuilder.like(criteriaBuilder.lower(root.join("book").get("title")), "%" + keyword.toLowerCase() + "%"));
+        }
+
+        Page<Borrowed_book_records> borrowedBookPage = bookBorrowRepository.findAll(spec, pageDetails);
+        List<Borrowed_book_records> borrowedBooks = borrowedBookPage.getContent();
+
+        if (borrowedBooks.isEmpty()) {
+            throw new APIException("No Borrowed Books Exist Now!");
+        }
+
+        List<BorrowBooksDTO> booksDTOS = borrowBookMapper.getAllBorrowBookMP(borrowedBooks);
+
+        BorrowBookResponse bookResponse = new BorrowBookResponse();
+        bookResponse.setContent(booksDTOS);
+        bookResponse.setPageNumber(borrowedBookPage.getNumber());
+        bookResponse.setLastPage(borrowedBookPage.isLast());
+        bookResponse.setPageSize(borrowedBookPage.getSize());
+        bookResponse.setTotalElements(borrowedBookPage.getTotalElements());
+        bookResponse.setTotalPages(borrowedBookPage.getTotalPages());
+
+        return bookResponse;
+    }
+
+    @Override
+    public BorrowBookResponse getAllBorrowingsOfAMember(Long userId, String keyword, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+        // TODO LIST
+        Optional<User> existingUser = userRepository.findById(userId);
+        if (existingUser.isEmpty()) {
+            throw new APIException("User not exists");
+        }
+
+        Sort sort = sortOrder.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+        Pageable pageable = PageRequest.of(pageNumber, pageSize, sort);
+
+        Page<Borrowed_book_records> borrowPage = bookBorrowRepository.findByUserIdAndKeyword(userId, keyword == null ? "" : keyword, pageable);
+        List<Borrowed_book_records> borrowList = borrowPage.getContent();
+
+        List<BorrowBooksDTO> booksDTOS = borrowBookMapper.getAllUsersSpecificBorrowBookMP(borrowList);
+        BorrowBookResponse response = new BorrowBookResponse();
+
+        if(booksDTOS.isEmpty()){
+            response.setContent(0); // Corrected line
+        }else {
+         response.setContent(booksDTOS); // Corrected line
+        }
+        //response.setContent(booksDTOS); // Corrected line
+        response.setPageNumber(borrowPage.getNumber());
+        response.setPageSize(borrowPage.getSize());
+        response.setTotalElements(borrowPage.getTotalElements());
+        response.setTotalPages(borrowPage.getTotalPages());
+        response.setLastPage(borrowPage.isLast());
+
+        return response;
+    }
 
     public void updateBookCopies(Book bookEntity, TransactionType operation, int numberOfCopies) {
         if (operation == TransactionType.RETURN) {
@@ -142,7 +216,6 @@ public class BookBorrowImp implements BookBorrowService {
                 throw new APIException("Not enough copies available");
             }
         }
-
         // Save the updated book count
         bookRepository.save(bookEntity);
     }
@@ -173,7 +246,6 @@ public class BookBorrowImp implements BookBorrowService {
         calendar.add(Calendar.DAY_OF_YEAR, 15);
         return (Date) calendar.getTime();
     }
-
 
 
 }

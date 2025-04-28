@@ -6,7 +6,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.librarymanagementsystem.annotation.Auditable;
 import org.librarymanagementsystem.emun.UserRole;
 import org.librarymanagementsystem.exception.APIException;
 import org.librarymanagementsystem.mapstruct.UserMapper;
@@ -26,10 +25,13 @@ import org.librarymanagementsystem.security.request.SignupDTO;
 import org.librarymanagementsystem.security.response.LoginResponse;
 import org.librarymanagementsystem.security.response.UserInfoResponse;
 import org.librarymanagementsystem.security.service.UserDetailsImpl;
+import org.librarymanagementsystem.services.CloudinaryService;
 import org.librarymanagementsystem.services.RefreshTokenService;
 import org.librarymanagementsystem.services.UserService;
+import org.librarymanagementsystem.servicesImp.NotificationServiceImp;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -38,8 +40,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.HashMap;
@@ -65,6 +69,8 @@ public class AuthController {
     private final UserMapper userMapper;
     private final RefreshTokenRepository refreshTokenRepository;
     private final RefreshTokenService refreshTokenService;
+    private final NotificationServiceImp notificationServiceImp;
+    private final CloudinaryService cloudinaryService;
 
     @Value("${spring.app.jwtRefreshExpirationMs}")
     private int jwtRefreshExpirationMs;
@@ -163,9 +169,14 @@ public class AuthController {
     }
 
     @Operation(summary = "Create a user-signup ", description = "This API is used to user-signup")
-    @PostMapping("/public/signup")
+    @PostMapping(value = "/public/signup", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Transactional
-    public ResponseEntity<UserInfoResponse> registerUser(@Valid @RequestBody SignupDTO signupDTO) {
+    public ResponseEntity<UserInfoResponse> registerUser(@RequestPart("signupDTO") @Valid SignupDTO signupDTO,
+                                                         @RequestPart("profile") MultipartFile profile,
+                                                         @RequestPart("idProof") MultipartFile idProof) throws IOException {
+        // First upload profile and idProof
+        Map<String, String> uploadedFiles = cloudinaryService.uploadFile(profile, idProof);
+
         if (userRepository.existsByUserName(signupDTO.getUserName())) {
             throw  new APIException("Username is already taken!");
         }
@@ -187,6 +198,10 @@ public class AuthController {
         User user = userMapper.signupDTOToUserMP(signupDTO);
         // Encrypt Password before saving
         user.setPassword(encoder.encode(user.getPassword()));
+        // Set uploaded Cloudinary URLs into User entity
+        user.setProfile(uploadedFiles.get("profileUrl"));
+        user.setIdProof(uploadedFiles.get("idProofUrl"));
+
 
         final User saveuser = userRepository.save(user);
 
@@ -222,6 +237,7 @@ public class AuthController {
         refreshTokenEntity.setToken(refreshToken);
         refreshTokenEntity.setExpiryDate(Instant.now().plus(Duration.ofMinutes(jwtRefreshExpirationMs))); // Set expiry to 7 days
         refreshTokenRepository.save(refreshTokenEntity);
+        notificationServiceImp.accountCreatedNotification(saveuser);
 
         return ResponseEntity.ok(new UserInfoResponse(
                 user.getId(),

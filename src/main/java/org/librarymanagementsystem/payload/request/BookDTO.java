@@ -1,4 +1,4 @@
-package org.librarymanagementsystem.payload.request.book;
+package org.librarymanagementsystem.payload.request;
 
 
 import lombok.Builder;

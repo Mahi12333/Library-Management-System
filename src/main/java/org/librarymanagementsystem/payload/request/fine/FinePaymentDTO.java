@@ -1,4 +1,4 @@
-package org.librarymanagementsystem.payload.request.book;
+package org.librarymanagementsystem.payload.request.fine;
 
 public class FinePaymentDTO {
     private Long fineId;        // ID of the fine being paid

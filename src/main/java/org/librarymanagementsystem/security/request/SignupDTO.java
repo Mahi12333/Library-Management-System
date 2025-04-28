@@ -4,6 +4,7 @@ package org.librarymanagementsystem.security.request;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Set;
 
@@ -19,5 +20,7 @@ public class SignupDTO {
     private String tc;
     private String agreeMarketingMaterial;
     private Set<String> roles;
+    private String profile;
+    private String idProof;
 
 }

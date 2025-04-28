@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -37,14 +38,22 @@ public class WebSecurityConfig {
         );*/
         //! Disable the Csrf Token
         http.csrf(AbstractHttpConfigurer::disable);
+        http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         http.authorizeHttpRequests(auth -> auth
-//                .requestMatchers("/api/admin/**").permitAll()
                 .requestMatchers("/v1/api/auth/**").permitAll()
                 .requestMatchers("/api/csrf-token").permitAll()
-//                .requestMatchers("/api/auth/public/**").permitAll()
                 .requestMatchers("/oauth2/**").permitAll()
                 .requestMatchers("/v3/api-docs/**").permitAll()
                 .requestMatchers("/swagger-ui/**").permitAll()
+                .requestMatchers("/v1/api/auth/user-login").hasAuthority("ROLE_STUDENT")
+                // Admin-only endpoints
+                .requestMatchers("/v1/api/auth/admin-login").hasAuthority("ROLE_ADMIN")
+                .requestMatchers("/v1/api/analytics/**").hasAuthority("ROLE_ADMIN")
+                .requestMatchers("/v1/api/transitional/get-all-borrowings-of-a-member", "/v1/api/transitional/get-all-borrowings")
+                .hasAuthority("ROLE_ADMIN")
+                .requestMatchers("/v1/api/book/create", "/v1/api/book/delete", "/v1/api/book/edit", "/v1/api/book/update")
+                .hasAuthority("ROLE_ADMIN")
+
                 .anyRequest().authenticated());
 
         /*http.oauth2Login(oauth2 ->

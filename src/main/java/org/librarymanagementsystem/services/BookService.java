@@ -1,11 +1,10 @@
 package org.librarymanagementsystem.services;
 
-import jakarta.validation.Valid;
 import org.librarymanagementsystem.model.Book;
-import org.librarymanagementsystem.payload.request.book.BookDTO;
-import org.librarymanagementsystem.payload.request.book.BookUpdateDTO;
+import org.librarymanagementsystem.payload.request.BookDTO;
+import org.librarymanagementsystem.payload.request.BookUpdateDTO;
 import org.librarymanagementsystem.payload.response.book.BookResponse;
-import org.librarymanagementsystem.payload.response.book.BookUpdateResponse;
+import org.librarymanagementsystem.payload.response.BookUpdateResponse;
 
 import java.util.List;
 

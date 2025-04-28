@@ -264,7 +264,7 @@ public class NotificationServiceImp implements NotificationService {
 
 
     // Scheduled method to send reminders for books due in 2 days
-    @Scheduled(cron = "0 0 10 * * ?")  // Runs every day at 10 AM
+    @Scheduled(cron = "0 24 17 * * ?") // Runs every day at 5:14 PM // Runs every day at 4:23 PM
     public void sendDueDateReminders() {
         Calendar calendar = Calendar.getInstance();
 
@@ -277,11 +277,12 @@ public class NotificationServiceImp implements NotificationService {
 
         // Fetch borrowings due soon
         List<Borrowed_book_records> borrowingsDueSoon = notificationRepository.findBorrowingsDueInDays(today, twoDaysFromNow);
-
+        log.info("borrowingsDueSoon--{}", borrowingsDueSoon);
         // Send reminders for each borrowing
         for (Borrowed_book_records borrowing : borrowingsDueSoon) {
             try {
                 Optional<User> member = userRepository.findById(borrowing.getUser().getId());
+                log.info("member--{}", member);
                 if (member.isPresent())
                     reminderNotification(borrowing);
             } catch (ResourceNotFoundException e) {

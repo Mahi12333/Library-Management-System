@@ -1,20 +1,21 @@
-package org.librarymanagementsystem.payload.response.book;
+package org.librarymanagementsystem.payload.response.borrowbook;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.librarymanagementsystem.model.Book;
+import org.librarymanagementsystem.payload.response.BorrowBooksDTO;
 
 import java.util.List;
 
 
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BookResponse {
-    private List<Book> content;
+@Setter
+@Getter
+public class BorrowBookResponse {
+   // List<BorrowBooksDTO> content;
+    private  Object content;
     private Integer pageNumber;
     private Integer pageSize;
     private Long totalElements;

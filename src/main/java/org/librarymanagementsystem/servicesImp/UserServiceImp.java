@@ -41,6 +41,7 @@ public class UserServiceImp implements UserService {
     private final PasswordResetTokenRepository passwordResetTokenRepository;
     private final EmailService emailService;
     private final UserMapper userMapper;
+    private final NotificationServiceImp notificationServiceImp;
 
 
     @Value("${FORGET_PASSWORD_URL}")
@@ -108,6 +109,7 @@ public class UserServiceImp implements UserService {
     public void deleteUser(Long userId) {
         User userDB = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("user", "user", userId));
         userRepository.delete(userDB);
+        notificationServiceImp.accountDeletionNotification(userDB);
     }
 
     @Override

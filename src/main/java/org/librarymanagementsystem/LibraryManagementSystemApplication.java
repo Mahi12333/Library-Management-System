@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @EnableTransactionManagement
-@EnableAsync
+@EnableAsync(proxyTargetClass = true)
 @EnableScheduling
 public class LibraryManagementSystemApplication {
 

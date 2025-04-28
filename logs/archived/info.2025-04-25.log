@@ -1,0 +1,657 @@
+2025-04-25 19:22:24 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-25 19:22:24 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - Starting LibraryManagementSystemApplication using Java 21.0.6 with PID 24016 (C:\Users\user\Java Notes\Library Management System\target\classes started by Mahitosh in C:\Users\user\Java Notes\Library Management System)
+2025-04-25 19:22:24 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - The following 1 profile is active: "dev"
+2025-04-25 19:22:25 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-25 19:22:25 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-25 19:22:28 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-25 19:22:28 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 355 ms. Found 13 JPA repository interfaces.
+2025-04-25 19:22:31 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5001 (http)
+2025-04-25 19:22:31 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-5001"]
+2025-04-25 19:22:31 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-25 19:22:31 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-25 19:22:31 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-25 19:22:31 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6529 ms
+2025-04-25 19:22:32 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-25 19:22:32 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-25 19:22:32 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-25 19:22:33 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-25 19:22:33 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-25 19:22:34 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58112a30
+2025-04-25 19:22:34 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-25 19:22:34 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-25 19:22:36 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-25 19:22:36 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 19:22:37 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-25 19:22:39 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-04-25 19:22:40 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookBorrowController' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\controller\BookBorrowController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'bookBorrowImp' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\servicesImp\BookBorrowImp.class]: Unsatisfied dependency expressed through constructor parameter 5: Error creating bean with name 'notificationServiceImp' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\servicesImp\NotificationServiceImp.class]: Need to invoke method 'sendDueDateReminders' declared on target class 'NotificationServiceImp', but not found in any interface(s) of the exposed proxy type. Either pull the method up to an interface or switch to CGLIB proxies by enforcing proxy-target-class mode in your configuration.
+2025-04-25 19:22:40 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 19:22:40 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-25 19:22:40 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-25 19:22:40 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-04-25 19:22:40 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-25 19:22:40 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookBorrowController' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\controller\BookBorrowController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'bookBorrowImp' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\servicesImp\BookBorrowImp.class]: Unsatisfied dependency expressed through constructor parameter 5: Error creating bean with name 'notificationServiceImp' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\servicesImp\NotificationServiceImp.class]: Need to invoke method 'sendDueDateReminders' declared on target class 'NotificationServiceImp', but not found in any interface(s) of the exposed proxy type. Either pull the method up to an interface or switch to CGLIB proxies by enforcing proxy-target-class mode in your configuration.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at org.librarymanagementsystem.LibraryManagementSystemApplication.main(LibraryManagementSystemApplication.java:17)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookBorrowImp' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\servicesImp\BookBorrowImp.class]: Unsatisfied dependency expressed through constructor parameter 5: Error creating bean with name 'notificationServiceImp' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\servicesImp\NotificationServiceImp.class]: Need to invoke method 'sendDueDateReminders' declared on target class 'NotificationServiceImp', but not found in any interface(s) of the exposed proxy type. Either pull the method up to an interface or switch to CGLIB proxies by enforcing proxy-target-class mode in your configuration.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1664)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'notificationServiceImp' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\servicesImp\NotificationServiceImp.class]: Need to invoke method 'sendDueDateReminders' declared on target class 'NotificationServiceImp', but not found in any interface(s) of the exposed proxy type. Either pull the method up to an interface or switch to CGLIB proxies by enforcing proxy-target-class mode in your configuration.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1664)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 38 common frames omitted
+Caused by: java.lang.IllegalStateException: Need to invoke method 'sendDueDateReminders' declared on target class 'NotificationServiceImp', but not found in any interface(s) of the exposed proxy type. Either pull the method up to an interface or switch to CGLIB proxies by enforcing proxy-target-class mode in your configuration.
+	at org.springframework.core.MethodIntrospector.selectInvocableMethod(MethodIntrospector.java:135)
+	at org.springframework.aop.support.AopUtils.selectInvocableMethod(AopUtils.java:150)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.createRunnable(ScheduledAnnotationBeanPostProcessor.java:544)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduledSync(ScheduledAnnotationBeanPostProcessor.java:358)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduled(ScheduledAnnotationBeanPostProcessor.java:343)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$1(ScheduledAnnotationBeanPostProcessor.java:308)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$2(ScheduledAnnotationBeanPostProcessor.java:308)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.postProcessAfterInitialization(ScheduledAnnotationBeanPostProcessor.java:307)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1815)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	... 48 common frames omitted
+2025-04-25 19:35:23 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-25 19:35:23 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - Starting LibraryManagementSystemApplication using Java 21.0.6 with PID 19728 (C:\Users\user\Java Notes\Library Management System\target\classes started by Mahitosh in C:\Users\user\Java Notes\Library Management System)
+2025-04-25 19:35:23 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - The following 1 profile is active: "dev"
+2025-04-25 19:35:23 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-25 19:35:23 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-25 19:35:25 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-25 19:35:26 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 223 ms. Found 13 JPA repository interfaces.
+2025-04-25 19:35:28 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5001 (http)
+2025-04-25 19:35:28 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-5001"]
+2025-04-25 19:35:28 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-25 19:35:28 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-25 19:35:28 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-25 19:35:28 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4721 ms
+2025-04-25 19:35:28 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-25 19:35:28 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-25 19:35:28 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-25 19:35:29 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-25 19:35:29 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-25 19:35:30 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45c0ff82
+2025-04-25 19:35:30 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-25 19:35:30 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-25 19:35:32 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-25 19:35:32 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 19:35:33 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-25 19:35:35 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-04-25 19:35:35 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookBorrowController' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\controller\BookBorrowController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'bookBorrowImp' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\servicesImp\BookBorrowImp.class]: Unsatisfied dependency expressed through constructor parameter 6: No qualifying bean of type 'org.librarymanagementsystem.mapstruct.BorrowBookMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-04-25 19:35:35 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 19:35:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-25 19:35:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-25 19:35:35 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-04-25 19:35:35 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-25 19:35:35 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 6 of constructor in org.librarymanagementsystem.servicesImp.BookBorrowImp required a bean of type 'org.librarymanagementsystem.mapstruct.BorrowBookMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.librarymanagementsystem.mapstruct.BorrowBookMapper' in your configuration.
+
+2025-04-25 19:36:47 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-25 19:36:48 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - Starting LibraryManagementSystemApplication using Java 21.0.6 with PID 27600 (C:\Users\user\Java Notes\Library Management System\target\classes started by Mahitosh in C:\Users\user\Java Notes\Library Management System)
+2025-04-25 19:36:48 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - The following 1 profile is active: "dev"
+2025-04-25 19:36:48 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-25 19:36:48 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-25 19:36:51 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-25 19:36:51 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 263 ms. Found 13 JPA repository interfaces.
+2025-04-25 19:36:53 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5001 (http)
+2025-04-25 19:36:53 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-5001"]
+2025-04-25 19:36:53 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-25 19:36:53 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-25 19:36:53 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-25 19:36:53 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5156 ms
+2025-04-25 19:36:53 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-25 19:36:53 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-25 19:36:54 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-25 19:36:54 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-25 19:36:54 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-25 19:36:55 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c28f168
+2025-04-25 19:36:55 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-25 19:36:55 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-25 19:36:57 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-25 19:36:58 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 19:36:58 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-25 19:37:00 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-04-25 19:37:01 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookBorrowController' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\controller\BookBorrowController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'bookBorrowImp' defined in file [C:\Users\user\Java Notes\Library Management System\target\classes\org\librarymanagementsystem\servicesImp\BookBorrowImp.class]: Unsatisfied dependency expressed through constructor parameter 6: No qualifying bean of type 'org.librarymanagementsystem.mapstruct.BorrowBookMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-04-25 19:37:01 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 19:37:01 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-25 19:37:01 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-25 19:37:01 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-04-25 19:37:01 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-25 19:37:01 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 6 of constructor in org.librarymanagementsystem.servicesImp.BookBorrowImp required a bean of type 'org.librarymanagementsystem.mapstruct.BorrowBookMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.librarymanagementsystem.mapstruct.BorrowBookMapper' in your configuration.
+
+2025-04-25 23:38:03 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-25 23:38:04 [main] INFO  o.l.LibraryManagementSystemApplicationTests - Starting LibraryManagementSystemApplicationTests using Java 21.0.6 with PID 12080 (started by Mahitosh in C:\Users\user\Java Notes\Library Management System)
+2025-04-25 23:38:04 [main] INFO  o.l.LibraryManagementSystemApplicationTests - The following 1 profile is active: "dev"
+2025-04-25 23:38:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-25 23:38:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 267 ms. Found 13 JPA repository interfaces.
+2025-04-25 23:38:09 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-25 23:38:09 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-25 23:38:09 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-25 23:38:10 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-25 23:38:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-25 23:38:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36cf6377
+2025-04-25 23:38:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-25 23:38:12 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-25 23:38:15 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-25 23:38:16 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 23:38:17 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-25 23:38:19 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-04-25 23:38:20 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-25 23:38:22 [main] INFO  o.l.security.WebSecurityConfig - Security Configuration Loaded Successfully
+2025-04-25 23:38:22 [main] INFO  o.l.security.WebSecurityConfig - webSecurityCustomizer-----
+2025-04-25 23:38:22 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v2/api-docs'], Ant [pattern='/v2/api-docs']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-04-25 23:38:22 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-04-25 23:38:22 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-04-25 23:38:22 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-04-25 23:38:22 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-04-25 23:38:22 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui.html'], Ant [pattern='/swagger-ui.html']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-04-25 23:38:23 [main] INFO  o.l.LibraryManagementSystemApplicationTests - Started LibraryManagementSystemApplicationTests in 20.804 seconds (process running for 23.68)
+2025-04-25 23:38:23 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.librarymanagementsystem.security.DatabaseSeederService.run]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-04-25 23:38:23 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(11229439<open>)] for JPA transaction
+2025-04-25 23:38:23 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@71a48be1]
+2025-04-25 23:38:23 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(11229439<open>)] for JPA transaction
+2025-04-25 23:38:23 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-04-25 23:38:23 [main] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-04-25 23:38:24 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(11229439<open>)] for JPA transaction
+2025-04-25 23:38:24 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-04-25 23:38:24 [main] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-04-25 23:38:24 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(11229439<open>)] for JPA transaction
+2025-04-25 23:38:24 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-04-25 23:38:24 [main] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-04-25 23:38:24 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-04-25 23:38:24 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(11229439<open>)]
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:38:24 [main] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(11229439<open>)] after transaction
+2025-04-25 23:38:25 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 23:38:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-25 23:38:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-25 23:39:32 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-25 23:39:33 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - Starting LibraryManagementSystemApplication using Java 21.0.6 with PID 5284 (C:\Users\user\Java Notes\Library Management System\target\classes started by Mahitosh in C:\Users\user\Java Notes\Library Management System)
+2025-04-25 23:39:33 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - The following 1 profile is active: "dev"
+2025-04-25 23:39:33 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-25 23:39:33 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-25 23:39:37 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-25 23:39:37 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 369 ms. Found 13 JPA repository interfaces.
+2025-04-25 23:39:40 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 5001 (http)
+2025-04-25 23:39:40 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-5001"]
+2025-04-25 23:39:40 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-25 23:39:40 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-25 23:39:40 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-25 23:39:40 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6977 ms
+2025-04-25 23:39:40 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-25 23:39:41 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-25 23:39:41 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-25 23:39:42 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-25 23:39:42 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-25 23:39:43 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6947fdab
+2025-04-25 23:39:43 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-25 23:39:44 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-25 23:39:47 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-25 23:39:48 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 23:39:48 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-25 23:39:51 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-04-25 23:39:53 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-25 23:39:54 [restartedMain] INFO  o.l.security.WebSecurityConfig - Security Configuration Loaded Successfully
+2025-04-25 23:39:54 [restartedMain] INFO  o.l.security.WebSecurityConfig - webSecurityCustomizer-----
+2025-04-25 23:39:54 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v2/api-docs'], Ant [pattern='/v2/api-docs']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-04-25 23:39:54 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/v3/api-docs/**'], Ant [pattern='/v3/api-docs/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-04-25 23:39:54 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-resources/**'], Ant [pattern='/swagger-resources/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-04-25 23:39:54 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui/**'], Ant [pattern='/swagger-ui/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-04-25 23:39:54 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-04-25 23:39:54 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/swagger-ui.html'], Ant [pattern='/swagger-ui.html']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-04-25 23:39:55 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-25 23:39:55 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-5001"]
+2025-04-25 23:39:55 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 5001 (http) with context path '/'
+2025-04-25 23:39:55 [restartedMain] INFO  o.l.LibraryManagementSystemApplication - Started LibraryManagementSystemApplication in 24.82 seconds (process running for 27.023)
+2025-04-25 23:39:55 [restartedMain] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.librarymanagementsystem.security.DatabaseSeederService.run]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-04-25 23:39:55 [restartedMain] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(179154770<open>)] for JPA transaction
+2025-04-25 23:39:55 [restartedMain] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@4e3e0950]
+2025-04-25 23:39:55 [restartedMain] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(179154770<open>)] for JPA transaction
+2025-04-25 23:39:55 [restartedMain] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-04-25 23:39:55 [restartedMain] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-04-25 23:39:56 [restartedMain] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(179154770<open>)] for JPA transaction
+2025-04-25 23:39:56 [restartedMain] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-04-25 23:39:56 [restartedMain] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-04-25 23:39:56 [restartedMain] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(179154770<open>)] for JPA transaction
+2025-04-25 23:39:56 [restartedMain] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-04-25 23:39:56 [restartedMain] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2025-04-25 23:39:56 [restartedMain] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-04-25 23:39:56 [restartedMain] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(179154770<open>)]
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:39:56 [restartedMain] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(179154770<open>)] after transaction
+2025-04-25 23:47:21 [http-nio-5001-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-25 23:47:21 [http-nio-5001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-25 23:47:21 [http-nio-5001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-04-25 23:47:21 [http-nio-5001-exec-1] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /swagger-ui/index.html
+2025-04-25 23:47:21 [http-nio-5001-exec-1] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
+2025-04-25 23:47:21 [http-nio-5001-exec-1] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
+2025-04-25 23:47:21 [http-nio-5001-exec-2] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /swagger-ui/swagger-ui.css
+2025-04-25 23:47:21 [http-nio-5001-exec-2] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
+2025-04-25 23:47:21 [http-nio-5001-exec-3] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /swagger-ui/swagger-initializer.js
+2025-04-25 23:47:21 [http-nio-5001-exec-3] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
+2025-04-25 23:47:21 [http-nio-5001-exec-2] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
+2025-04-25 23:47:21 [http-nio-5001-exec-3] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
+2025-04-25 23:47:21 [http-nio-5001-exec-4] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /swagger-ui/index.css
+2025-04-25 23:47:21 [http-nio-5001-exec-4] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
+2025-04-25 23:47:21 [http-nio-5001-exec-4] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
+2025-04-25 23:47:21 [http-nio-5001-exec-5] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /swagger-ui/swagger-ui-bundle.js
+2025-04-25 23:47:21 [http-nio-5001-exec-5] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
+2025-04-25 23:47:21 [http-nio-5001-exec-5] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
+2025-04-25 23:47:21 [http-nio-5001-exec-6] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /swagger-ui/swagger-ui-standalone-preset.js
+2025-04-25 23:47:21 [http-nio-5001-exec-6] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
+2025-04-25 23:47:21 [http-nio-5001-exec-6] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
+2025-04-25 23:47:22 [http-nio-5001-exec-7] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /v3/api-docs/swagger-config
+2025-04-25 23:47:22 [http-nio-5001-exec-7] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
+2025-04-25 23:47:22 [http-nio-5001-exec-7] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
+2025-04-25 23:47:22 [http-nio-5001-exec-8] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /v3/api-docs
+2025-04-25 23:47:22 [http-nio-5001-exec-8] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
+2025-04-25 23:47:22 [http-nio-5001-exec-8] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
+2025-04-25 23:47:25 [http-nio-5001-exec-8] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 3019 ms
+2025-04-25 23:51:33 [http-nio-5001-exec-2] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /v1/api/auth/user-login
+2025-04-25 23:51:33 [http-nio-5001-exec-2] INFO  o.l.security.jwt.JwtUtils - Authorization Header: null
+2025-04-25 23:51:33 [http-nio-5001-exec-2] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: null
+2025-04-25 23:51:33 [http-nio-5001-exec-2] INFO  o.l.interceptors.LogsInterceptor - REQUEST: User=Anonymous, Method=POST, URL=/v1/api/auth/user-login
+2025-04-25 23:51:33 [http-nio-5001-exec-2] INFO  o.l.interceptors.LogsInterceptor -  Else ACTION LOG: User=Anonymous, Method=POST, Table=v1, Action=api
+2025-04-25 23:51:33 [http-nio-5001-exec-2] INFO  o.l.controller.AuthController - authentication1----
+2025-04-25 23:51:33 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(77466455<open>)] for JPA transaction
+2025-04-25 23:51:33 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-04-25 23:51:33 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@79f01d67]
+2025-04-25 23:51:33 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(77466455<open>)]
+2025-04-25 23:51:34 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:34 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Not closing pre-bound JPA EntityManager after transaction
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.account_expiry_date,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.address,u1_0.agree_marketing_material,u1_0.country_code,u1_0.created_at,u1_0.credentials_expiry_date,u1_0.credentials_non_expired,u1_0.email,u1_0.enabled,u1_0.fcm_token,u1_0.id_proof,u1_0.is_two_factor_enabled,u1_0.is_verified,u1_0.membership_date,u1_0.password,u1_0.phone_number,u1_0.profile,u1_0.sign_up_method,u1_0.status,u1_0.term_condition_material,u1_0.two_factor_secret,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.email=?
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.role_id,r1_0.id,r1_0.role_name from user_role_mappings ur1_0 left join roles r1_0 on r1_0.id=ur1_0.role_id where ur1_0.user_id=?
+2025-04-25 23:51:34 [http-nio-5001-exec-2] INFO  o.l.controller.AuthController - authentication-- UsernamePasswordAuthenticationToken [Principal=UserDetailsImpl(id=1, userName=Mahitosh, email=mahitoshgiri287@gmail.com, password=$2a$12$jnB4Nj.L4oV.iJo3Xevgte2cFx/SbqzubTtXiwZ4ekjI1AEeO6Poq, accountNonExpired=true, accountNonLocked=true, credentialsNonExpired=true, enabled=true, authorities=[ROLE_STUDENT]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_STUDENT]]
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(77466455<open>)] for JPA transaction
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.librarymanagementsystem.servicesImp.RefreshTokenServiceImp.deleteByUserId]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@70813fd1]
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(77466455<open>)] for JPA transaction
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(77466455<open>)] for JPA transaction
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - select dl1_0.id,dl1_0.changes,dl1_0.created_date,dl1_0.entity_id,dl1_0.entity_name,dl1_0.modified_by,dl1_0.modified_date,dl1_0.operation,dl1_0.timestamp from audit_logs dl1_0 where dl1_0.id=?
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(77466455<open>)] for JPA transaction
+2025-04-25 23:51:34 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_PERSIST_ON_FLUSH for: org.librarymanagementsystem.model.User
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Cascade ACTION_PERSIST_ON_FLUSH for collection: org.librarymanagementsystem.model.User.userRoles
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done cascade ACTION_PERSIST_ON_FLUSH for collection: org.librarymanagementsystem.model.User.userRoles
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Deleting orphans for collection: org.librarymanagementsystem.model.User.userRoles
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done deleting orphans for collection: org.librarymanagementsystem.model.User.userRoles
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_PERSIST_ON_FLUSH for: org.librarymanagementsystem.model.User
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.User
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.User
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.UserRoleMapping
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.UserRoleMapping
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - delete rt1_0 from refreshes rt1_0 where rt1_0.user_id=?
+2025-04-25 23:51:35 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-04-25 23:51:35 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(77466455<open>)]
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_PERSIST_ON_FLUSH for: org.librarymanagementsystem.model.User
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Cascade ACTION_PERSIST_ON_FLUSH for collection: org.librarymanagementsystem.model.User.userRoles
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done cascade ACTION_PERSIST_ON_FLUSH for collection: org.librarymanagementsystem.model.User.userRoles
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Deleting orphans for collection: org.librarymanagementsystem.model.User.userRoles
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done deleting orphans for collection: org.librarymanagementsystem.model.User.userRoles
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_PERSIST_ON_FLUSH for: org.librarymanagementsystem.model.User
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.User
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.User
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.UserRoleMapping
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.UserRoleMapping
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Not closing pre-bound JPA EntityManager after transaction
+2025-04-25 23:51:35 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(77466455<open>)] for JPA transaction
+2025-04-25 23:51:35 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-04-25 23:51:35 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@57fd94c0]
+2025-04-25 23:51:35 [http-nio-5001-exec-2] DEBUG org.hibernate.SQL - insert into refreshes (expiry_date,token,user_id) values (?,?,?)
+2025-04-25 23:51:35 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-04-25 23:51:35 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(77466455<open>)]
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_PERSIST_ON_FLUSH for: org.librarymanagementsystem.model.User
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Cascade ACTION_PERSIST_ON_FLUSH for collection: org.librarymanagementsystem.model.User.userRoles
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done cascade ACTION_PERSIST_ON_FLUSH for collection: org.librarymanagementsystem.model.User.userRoles
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Deleting orphans for collection: org.librarymanagementsystem.model.User.userRoles
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done deleting orphans for collection: org.librarymanagementsystem.model.User.userRoles
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_PERSIST_ON_FLUSH for: org.librarymanagementsystem.model.User
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.User
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.User
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.Role
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.UserRoleMapping
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.UserRoleMapping
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.RefreshToken
+2025-04-25 23:51:35 [http-nio-5001-exec-2] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.RefreshToken
+2025-04-25 23:51:35 [http-nio-5001-exec-2] DEBUG o.s.orm.jpa.JpaTransactionManager - Not closing pre-bound JPA EntityManager after transaction
+2025-04-25 23:51:35 [http-nio-5001-exec-2] INFO  o.l.interceptors.LogsInterceptor - POST-RESPONSE: User=Mahitosh, Method=POST, URL=/v1/api/auth/user-login, Status=200
+2025-04-25 23:52:23 [http-nio-5001-exec-3] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter called for URI: /v1/api/transitional/get-all-borrowings
+2025-04-25 23:52:23 [http-nio-5001-exec-3] INFO  o.l.security.jwt.JwtUtils - Authorization Header: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzQ1NjA1Mjk0LCJleHAiOjE3NDU2MDY0OTR9.bda5SnesUC0nHC2j4T9iBuM7P76OTskOAS1autFWg6M
+2025-04-25 23:52:23 [http-nio-5001-exec-3] INFO  o.l.security.jwt.AuthTokenFilter - AuthTokenFilter.java: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzQ1NjA1Mjk0LCJleHAiOjE3NDU2MDY0OTR9.bda5SnesUC0nHC2j4T9iBuM7P76OTskOAS1autFWg6M
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(2080898346<open>)] for JPA transaction
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@1c2f0933]
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(2080898346<open>)]
+2025-04-25 23:52:23 [http-nio-5001-exec-3] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:52:23 [http-nio-5001-exec-3] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(2080898346<open>)] after transaction
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(820243896<open>)] for JPA transaction
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@678ab09b]
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.account_expiry_date,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.address,u1_0.agree_marketing_material,u1_0.country_code,u1_0.created_at,u1_0.credentials_expiry_date,u1_0.credentials_non_expired,u1_0.email,u1_0.enabled,u1_0.fcm_token,u1_0.id_proof,u1_0.is_two_factor_enabled,u1_0.is_verified,u1_0.membership_date,u1_0.password,u1_0.phone_number,u1_0.profile,u1_0.sign_up_method,u1_0.status,u1_0.term_condition_material,u1_0.two_factor_secret,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(820243896<open>)]
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(820243896<open>)] after transaction
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(90615531<open>)] for JPA transaction
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@3a5cab19]
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(90615531<open>)]
+2025-04-25 23:52:23 [http-nio-5001-exec-3] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:52:23 [http-nio-5001-exec-3] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(90615531<open>)] after transaction
+2025-04-25 23:52:23 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select r1_0.role_name from user_role_mappings urm1_0 join roles r1_0 on r1_0.id=urm1_0.role_id where urm1_0.user_id=?
+2025-04-25 23:52:23 [http-nio-5001-exec-3] INFO  o.l.security.jwt.AuthTokenFilter - userDetails--UserDetailsImpl(id=1, userName=Mahitosh, email=mahitoshgiri287@gmail.com, password=$2a$12$jnB4Nj.L4oV.iJo3Xevgte2cFx/SbqzubTtXiwZ4ekjI1AEeO6Poq, accountNonExpired=true, accountNonLocked=true, credentialsNonExpired=true, enabled=true, authorities=[ROLE_STUDENT])
+2025-04-25 23:52:23 [http-nio-5001-exec-3] INFO  o.l.security.jwt.AuthTokenFilter - Roles from JWT: [ROLE_STUDENT]
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(260885008<open>)] for JPA transaction
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@35517913]
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - insert into audit_logs (changes,created_date,entity_id,entity_name,modified_by,modified_date,operation,timestamp) values (?,?,?,?,?,?,?,?)
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(260885008<open>)]
+2025-04-25 23:52:24 [http-nio-5001-exec-3] TRACE o.hibernate.engine.internal.Cascade - Processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:52:24 [http-nio-5001-exec-3] TRACE o.hibernate.engine.internal.Cascade - Done processing cascade ACTION_CHECK_ON_FLUSH for: org.librarymanagementsystem.model.DBAuditLog
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Not closing pre-bound JPA EntityManager after transaction
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(260885008<open>)] for JPA transaction
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@757ba15]
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select b1_0.id,b1_0.book_id,b1_0.borrow_at,b1_0.due_date,b1_0.fine_id,b1_0.return_at,b1_0.user_id from borrowed_books b1_0 order by b1_0.id limit ?,?
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select b1_0.id,b1_0.author,b1_0.book_count,b1_0.category,b1_0.created_at,b1_0.description,b1_0.isbn,b1_0.status,b1_0.title,b1_0.updated_at from books b1_0 where b1_0.id=?
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.account_expiry_date,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.address,u1_0.agree_marketing_material,u1_0.country_code,u1_0.created_at,u1_0.credentials_expiry_date,u1_0.credentials_non_expired,u1_0.email,u1_0.enabled,u1_0.fcm_token,u1_0.id_proof,u1_0.is_two_factor_enabled,u1_0.is_verified,u1_0.membership_date,u1_0.password,u1_0.phone_number,u1_0.profile,u1_0.sign_up_method,u1_0.status,u1_0.term_condition_material,u1_0.two_factor_secret,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.id=?
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select f1_0.id,f1_0.amount,b1_0.id,b1_0.author,b1_0.book_count,b1_0.category,b1_0.created_at,b1_0.description,b1_0.isbn,b1_0.status,b1_0.title,b1_0.updated_at,f1_0.created_at,f1_0.fine_date,f1_0.paid,f1_0.updated_at,f1_0.user_id,u1_0.id,u1_0.account_expiry_date,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.address,u1_0.agree_marketing_material,u1_0.country_code,u1_0.created_at,u1_0.credentials_expiry_date,u1_0.credentials_non_expired,u1_0.email,u1_0.enabled,u1_0.fcm_token,u1_0.id_proof,u1_0.is_two_factor_enabled,u1_0.is_verified,u1_0.membership_date,u1_0.password,u1_0.phone_number,u1_0.profile,u1_0.sign_up_method,u1_0.status,u1_0.term_condition_material,u1_0.two_factor_secret,u1_0.updated_at,u1_0.username from book_fines f1_0 left join books b1_0 on b1_0.id=f1_0.book_id join users u1_0 on u1_0.id=f1_0.user_id where f1_0.id=?
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select f1_0.id,f1_0.amount,b1_0.id,b1_0.author,b1_0.book_count,b1_0.category,b1_0.created_at,b1_0.description,b1_0.isbn,b1_0.status,b1_0.title,b1_0.updated_at,f1_0.created_at,f1_0.fine_date,f1_0.paid,f1_0.updated_at,f1_0.user_id,u1_0.id,u1_0.account_expiry_date,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.address,u1_0.agree_marketing_material,u1_0.country_code,u1_0.created_at,u1_0.credentials_expiry_date,u1_0.credentials_non_expired,u1_0.email,u1_0.enabled,u1_0.fcm_token,u1_0.id_proof,u1_0.is_two_factor_enabled,u1_0.is_verified,u1_0.membership_date,u1_0.password,u1_0.phone_number,u1_0.profile,u1_0.sign_up_method,u1_0.status,u1_0.term_condition_material,u1_0.two_factor_secret,u1_0.updated_at,u1_0.username from book_fines f1_0 left join books b1_0 on b1_0.id=f1_0.book_id join users u1_0 on u1_0.id=f1_0.user_id where f1_0.id=?
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(260885008<open>)]
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG o.s.orm.jpa.JpaTransactionManager - Not closing pre-bound JPA EntityManager after transaction
+2025-04-25 23:52:24 [http-nio-5001-exec-3] DEBUG org.hibernate.SQL - select ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.role_id,r1_0.id,r1_0.role_name from user_role_mappings ur1_0 left join roles r1_0 on r1_0.id=ur1_0.role_id where ur1_0.user_id=?
+2025-04-25 23:52:24 [http-nio-5001-exec-3] ERROR o.l.e.MyGlobalExceptionHandler - Exception---- Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-04-25 23:52:24 [http-nio-5001-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]

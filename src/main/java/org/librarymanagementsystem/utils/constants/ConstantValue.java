@@ -11,4 +11,11 @@ public class ConstantValue {
     public static final String PAGE_SIZE_BOOK = "6";
     public static final String SORT_DIR_BOOK = "asc";
     public static final String SORT_USERS_BY_BOOK = "id";
+
+    //!Borrow Book-----------
+    public static final String PAGE_NUMBER_BORROW_BOOK = "0";
+    public static final String PAGE_SIZE_BORROW_BOOK = "6";
+    public static final String SORT_DIR_BORROW_BOOK = "asc";
+    public static final String SORT_USERS_BY_BORROW_BOOK = "id";
+
 }

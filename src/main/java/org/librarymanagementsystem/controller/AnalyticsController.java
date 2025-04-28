@@ -39,7 +39,7 @@ public class AnalyticsController {
 
     @Operation(summary = "borrowing-trends of Analytics ", description = "This ")
     @GetMapping("/borrowing-trends")
-    public ResponseEntity<Map<String, Long>> getBorrowingTrends(
+    public ResponseEntity <List<Map<String, Long>>> getBorrowingTrends(
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
         return ResponseEntity.ok(analyticsServiceImp.getBorrowingTrends(startDate, endDate));

@@ -56,6 +56,10 @@ spring:
 
       domain_name: "Library"
 
+
+  aop:
+      proxy-target-class: true
+
 springdoc:
   swagger-ui:
     enabled: true  # Enable Swagger UI
@@ -103,4 +107,10 @@ FRONTEND_URL: "http://localhost:4200,https://your-production-site.com"
 FORGET_PASSWORD_URL: "http://localhost:4200"
 server:
   port: 5001
+  # Error Handling
+  error:
+    include-binding-errors: always
+    include-message: always
+    include-stacktrace: never
+    include-exception: true
 

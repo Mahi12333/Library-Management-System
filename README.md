@@ -47,31 +47,6 @@ If you have any questions or would like to connect, please don't hesitate to rea
 **LinkedIn:** [Connect with me](https://www.linkedin.com/in/mahitosh-giri-775b6a188/)
 <br><br>
 
-## Contributors
-<img src="https://contrib.rocks/image?repo=ajaynegi45/LibraryMan-API" />
-
----
-
-<table>
-    <thead align="center">
-        <tr border: 2px;>
-            <td><b>🌟 Stars</b></td>
-            <td><b>🍴 Forks</b></td>
-            <td><b>🐛 Issues</b></td>
-            <td><b>🔔 Open PRs</b></td>
-            <td><b>🔕 Close PRs</b></td>
-        </tr>
-     </thead>
-    <tbody>
-         <tr>
-            <td><img alt="Stars" src="https://github.com/Mahi12333/Library-Management-System?style=flat&logo=github"/></td>
-             <td><img alt="Forks" src="https://github.com/Mahi12333/Library-Management-System?style=flat&logo=github"/></td>
-            <td><img alt="Issues" src="https://github.com/Mahi12333/Library-Management-System?style=flat&logo=github"/></td>
-            <td><img alt="Open Pull Requests" src="https://github.com/Mahi12333/Library-Management-System?style=flat&logo=github"/></td>
-           <td><img alt="Close Pull Requests" src="https://github.com/Mahi12333/Library-Management-System?style=flat&color=green&logo=github"/></td>
-        </tr>
-    </tbody>
-</table>
 
 
 ### Stargazers

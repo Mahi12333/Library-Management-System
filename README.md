@@ -7,6 +7,8 @@ Library-Management-System is a user-friendly software solution for schools, comp
 ## Project Structure 📂
 Checkout [Project Structure](https://github.com/ajaynegi45/LibraryMan-API/tree/main/project-structure) Diagram
 
+📌 View the [Database Schema Diagram](https://ibb.co/FL5XpQsw)
+
 ## API Endpoints 🔗
 
 #### Learn More

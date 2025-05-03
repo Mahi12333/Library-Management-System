@@ -1,7 +1,11 @@
 package org.librarymanagementsystem.controller;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -71,6 +75,7 @@ public class AuthController {
     private final RefreshTokenService refreshTokenService;
     private final NotificationServiceImp notificationServiceImp;
     private final CloudinaryService cloudinaryService;
+    private final ObjectMapper objectMapper;
 
     @Value("${spring.app.jwtRefreshExpirationMs}")
     private int jwtRefreshExpirationMs;
@@ -168,44 +173,72 @@ public class AuthController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @Operation(summary = "Photo Upload ", description = "This API is photo upload")
+    @PostMapping(value = "/public/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @Transactional
+    public ResponseEntity<String> imageupload(@RequestPart("profile") MultipartFile profile,
+                                                         @RequestPart("idProof") MultipartFile idProof) throws IOException {
+        // First upload profile and idProof
+       // Map<String, String> uploadedFiles = cloudinaryService.uploadFile(profile, idProof);
+        return ResponseEntity.ok("upload");
+    }
+
     @Operation(summary = "Create a user-signup ", description = "This API is used to user-signup")
     @PostMapping(value = "/public/signup", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Transactional
-    public ResponseEntity<UserInfoResponse> registerUser(@RequestPart("signupDTO") @Valid SignupDTO signupDTO,
-                                                         @RequestPart("profile") MultipartFile profile,
-                                                         @RequestPart("idProof") MultipartFile idProof) throws IOException {
-        // First upload profile and idProof
-        Map<String, String> uploadedFiles = cloudinaryService.uploadFile(profile, idProof);
+    public ResponseEntity<UserInfoResponse> registerUser(
+            @RequestPart("signupDTO") @Valid String signupDTO,
+            @Parameter(schema = @Schema(type = "string", format = "binary", required = false, description = "Local Image Upload"))
+            @RequestPart(value = "profile", required = false) MultipartFile profile,
+            @Parameter(schema = @Schema(type = "string", format = "binary", required = false, description = "Local Image Upload"))
+            @RequestPart(value = "idProof", required = false) MultipartFile idProof) throws IOException {
 
-        if (userRepository.existsByUserName(signupDTO.getUserName())) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        SignupDTO payloadData;
+        try {
+            payloadData = objectMapper.readValue(signupDTO, SignupDTO.class);
+        } catch (JsonProcessingException e) {
+            throw new APIException("Invalid JSON format");
+        }
+
+        log.info("Received signupDTO: " + signupDTO);
+//        log.info("Profile file received: {}", profile.getOriginalFilename());
+//        log.info("ID Proof file received: {}", idProof.getOriginalFilename());
+        // Validate if files are not empty
+//        if (profile == null || profile.isEmpty() || idProof.isEmpty() || idProof == null) {
+//            throw new APIException("Profile and ID Proof files are required");
+//        }
+
+        if (userRepository.existsByUserName(payloadData.getUserName())) {
             throw  new APIException("Username is already taken!");
         }
-        if (userRepository.existsByEmail(signupDTO.getEmail())) {
+        if (userRepository.existsByEmail(payloadData.getEmail())) {
             throw  new APIException("Email is already taken!");
         }
-        if(!signupDTO.getPassword().equals(signupDTO.getConfirmPassword())){
+        if(!payloadData.getPassword().equals(payloadData.getConfirmPassword())){
             throw  new APIException("Password and  ConfirmPassword not correct");
         }
 
-       /* // Create new user's account
-        User user = new User(signupDTO.getUserName(),
-                signupDTO.getEmail(),
-                encoder.encode(signupDTO.getPassword()),
-                signupDTO.getTc(),
-                signupDTO.getAgreeMarketingMaterial()
-                );*/
-
-        User user = userMapper.signupDTOToUserMP(signupDTO);
+        User user = userMapper.signupDTOToUserMP(payloadData);
         // Encrypt Password before saving
         user.setPassword(encoder.encode(user.getPassword()));
         // Set uploaded Cloudinary URLs into User entity
-        user.setProfile(uploadedFiles.get("profileUrl"));
-        user.setIdProof(uploadedFiles.get("idProofUrl"));
+        if (profile != null && !profile.isEmpty()) {
+            log.info("Uploaded profile URL: {}", profile.getOriginalFilename());
+            String profileUrl = cloudinaryService.uploadFile(profile);
+            user.setProfile(profileUrl);
+        }
 
+        if (idProof != null && !idProof.isEmpty()) {
+            log.info("Uploaded ID proof URL: {}", idProof.getOriginalFilename());
+            String idProofUrl = cloudinaryService.uploadFile(idProof);
+            user.setIdProof(idProofUrl);
+        }
 
         final User saveuser = userRepository.save(user);
 
-        Set<String> strRoles = signupDTO.getRoles();
+        Set<String> strRoles = payloadData.getRoles();
         Set<Role> roles = new HashSet<>();
 
         if (strRoles == null) {
@@ -236,8 +269,8 @@ public class AuthController {
         refreshTokenEntity.setUserId(saveuser.getId());
         refreshTokenEntity.setToken(refreshToken);
         refreshTokenEntity.setExpiryDate(Instant.now().plus(Duration.ofMinutes(jwtRefreshExpirationMs))); // Set expiry to 7 days
-        refreshTokenRepository.save(refreshTokenEntity);
         notificationServiceImp.accountCreatedNotification(saveuser);
+        refreshTokenRepository.save(refreshTokenEntity);
 
         return ResponseEntity.ok(new UserInfoResponse(
                 user.getId(),

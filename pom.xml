@@ -143,7 +143,12 @@
 		<!--			<version>6.4.2.Final</version> &lt;!&ndash; Last stable before Hibernate 7 &ndash;&gt;-->
 		<!--		</dependency>-->
 
-
+		<!--        objects ko JSON me convert karne aur JSON ko Java objects me parse karne ke liye use hoti hai.-->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.18.2</version>
+		</dependency>
 
 
 

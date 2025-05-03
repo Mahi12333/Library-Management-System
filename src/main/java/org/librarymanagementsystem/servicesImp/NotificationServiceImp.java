@@ -133,8 +133,9 @@ public class NotificationServiceImp implements NotificationService {
         notification.setNotificationType(NotificationType.ACCOUNT_CREATED);
         notification.setSentDate(new Timestamp(System.currentTimeMillis()));
 
-        notificationRepository.save(notification);
-        sendNotification(notification);
+//        notificationRepository.save(notification);
+        Notification savedNotification = notificationRepository.save(notification);
+        sendNotification(savedNotification);
     }
 
 
@@ -144,6 +145,7 @@ public class NotificationServiceImp implements NotificationService {
         notification.setMessage("We’re sorry to see you go! Your account with LibraryMan has been successfully deleted as per your request.<br><br>If you change your mind in the future, you’re always welcome to create a new account with us. Should you have any questions or concerns, please don’t hesitate to reach out.<br><br>Thank you for being a part of our community.");
         notification.setNotificationType(NotificationType.ACCOUNT_DELETED);
         notification.setSentDate(new Timestamp(System.currentTimeMillis()));
+        notificationRepository.save(notification);
         sendNotification(notification);
     }
 

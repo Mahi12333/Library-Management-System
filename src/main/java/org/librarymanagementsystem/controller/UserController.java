@@ -1,7 +1,11 @@
 package org.librarymanagementsystem.controller;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -9,7 +13,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.librarymanagementsystem.emun.UserRole;
 import org.librarymanagementsystem.exception.APIException;
-import org.librarymanagementsystem.exception.ResourceNotFoundException;
 import org.librarymanagementsystem.model.Role;
 import org.librarymanagementsystem.model.User;
 import org.librarymanagementsystem.repository.RefreshTokenRepository;
@@ -18,18 +21,22 @@ import org.librarymanagementsystem.security.request.UpdatePasswordDTO;
 import org.librarymanagementsystem.security.request.UpdateUserDTO;
 import org.librarymanagementsystem.security.response.UserInfoResponse;
 import org.librarymanagementsystem.security.response.UserResponse;
+import org.librarymanagementsystem.services.CloudinaryService;
 import org.librarymanagementsystem.services.RefreshTokenService;
 import org.librarymanagementsystem.services.UserService;
 import org.librarymanagementsystem.utils.AuthUtil;
 import org.librarymanagementsystem.utils.constants.ConstantValue;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -48,6 +55,8 @@ public class UserController {
      private final RefreshTokenRepository refreshTokenRepository;
      private final UserRoleMappingRepository userRoleMappingRepository;
      private final RefreshTokenService refreshTokenService;
+     private final ObjectMapper objectMapper;
+     private final CloudinaryService cloudinaryService;
 
 
     /*@Operation(summary = "Request Password Reset", description = "Generates a password reset token and sends email.")
@@ -143,8 +152,32 @@ public class UserController {
 
     @SecurityRequirement(name = "bearerAuth")
     @Operation(summary = "User Edit", description = "Edit User details of a specific user.")
-    @PatchMapping("/user-updated")
-    public ResponseEntity<?> updateUser(@Valid @RequestBody UpdateUserDTO request) {
+    @PatchMapping(value = "/user-updated", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<?> updateUser(
+                                        @RequestPart("updateUserDTO") @Valid String updateUserDTO,
+                                        @Parameter(schema = @Schema(type = "string", format = "binary", required = false, description = "Local Image Upload"))
+                                        @RequestPart(value = "profile", required = false) MultipartFile profile,
+                                        @Parameter(schema = @Schema(type = "string", format = "binary", required = false, description = "Local Image Upload"))
+                                        @RequestPart(value = "idProof", required = false) MultipartFile idProof
+    ) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        UpdateUserDTO request;
+        try {
+            request = objectMapper.readValue(updateUserDTO, UpdateUserDTO.class);
+        } catch (JsonProcessingException e) {
+            throw new APIException("Invalid JSON format");
+        }
+        if (profile != null && !profile.isEmpty()) {
+            log.info("Uploaded profile URL: {}", profile.getOriginalFilename());
+            String profileUrl = cloudinaryService.uploadFile(profile);
+            request.setProfile(profileUrl);
+        }
+
+        if (idProof != null && !idProof.isEmpty()) {
+            log.info("Uploaded ID proof URL: {}", idProof.getOriginalFilename());
+            String idProofUrl = cloudinaryService.uploadFile(idProof);
+            request.setIdProof(idProofUrl);
+        }
        UserInfoResponse userResponseDTO = userService.updateUserDetails(request);
        return new ResponseEntity<>(userResponseDTO, HttpStatus.OK);
     }

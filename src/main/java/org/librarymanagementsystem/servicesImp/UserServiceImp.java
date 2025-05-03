@@ -13,6 +13,7 @@ import org.librarymanagementsystem.security.request.UpdatePasswordDTO;
 import org.librarymanagementsystem.security.request.UpdateUserDTO;
 import org.librarymanagementsystem.security.response.UserInfoResponse;
 import org.librarymanagementsystem.security.response.UserResponse;
+import org.librarymanagementsystem.services.CloudinaryService;
 import org.librarymanagementsystem.services.UserService;
 import org.librarymanagementsystem.utils.EmailService;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,7 +25,9 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -42,6 +45,7 @@ public class UserServiceImp implements UserService {
     private final EmailService emailService;
     private final UserMapper userMapper;
     private final NotificationServiceImp notificationServiceImp;
+    private final CloudinaryService cloudinaryService;
 
 
     @Value("${FORGET_PASSWORD_URL}")
@@ -188,6 +192,7 @@ public class UserServiceImp implements UserService {
     public UserInfoResponse updateUserDetails(UpdateUserDTO request) {
         User existingUser = userRepository.findById(request.getId())
                 .orElseThrow(() -> new ResourceNotFoundException("user","User not found"));
+
         if(isUserChanged(request, existingUser)){
             userMapper.updateUserFromDto(request, existingUser);
             existingUser.setUpdatedAt(LocalDateTime.now());

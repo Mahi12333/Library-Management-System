@@ -8,5 +8,5 @@ import java.io.IOException;
 import java.util.Map;
 
 public interface CloudinaryService {
-    Map<String, String> uploadFile(MultipartFile profile, MultipartFile idProof) throws IOException;
+    String uploadFile(MultipartFile file) throws IOException;
 }

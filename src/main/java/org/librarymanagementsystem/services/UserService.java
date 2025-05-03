@@ -5,6 +5,7 @@ import org.librarymanagementsystem.security.request.UpdatePasswordDTO;
 import org.librarymanagementsystem.security.request.UpdateUserDTO;
 import org.librarymanagementsystem.security.response.UserInfoResponse;
 import org.librarymanagementsystem.security.response.UserResponse;
+import org.springframework.web.multipart.MultipartFile;
 
 
 public interface UserService {

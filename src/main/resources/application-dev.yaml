@@ -25,12 +25,12 @@ spring:
       format_sql: true
   show-sql: true
 
-  #  servlet:
-#    multipart:
-#      enabled: true  # Enable multipart uploads
-#      file-size-threshold: 2KB  # Threshold after which files are written to disk
-#      max-file-size: 200MB  # Max file size
-#      max-request-size: 215MB  # Max request size
+  servlet:
+    multipart:
+      enabled: true  # Enable multipart uploads
+      file-size-threshold: 2KB  # Threshold after which files are written to disk
+      max-file-size: 100MB  # Max file size
+      max-request-size: 100MB  # Total Max request size
 
   task:
     execution:
@@ -82,10 +82,12 @@ logging:
     org.hibernate.SQL: DEBUG
     org.hibernate.engine.internal.Cascade: TRACE  # Use for check any on Cascade of entity
     org.type.descriptor: DEBUG
-    org.springframework.web: INFO
+    org.springframework.web: DEBUG  #INFO
     org.springframework.transaction: DEBUG   # Use for check any on transition
     org.springframework.orm.jpa.JpaTransactionManager: DEBUG # Use for check any on transition
     com.example.librarymanagement: DEBUG
+    # Debug multipart processing
+    org.apache.tomcat: DEBUG
   file:
     name: logs/application.log
 

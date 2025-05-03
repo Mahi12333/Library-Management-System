@@ -3,10 +3,12 @@ package org.librarymanagementsystem.security.request;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 
 @Getter
-@Builder
+//@Builder
+@Setter
 public class UpdateUserDTO {
     private Long id;
     private String userName;

@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.Set;
 
 
-@Builder
+//@Builder
 @Getter
 public class SignupDTO {
     private Long id;

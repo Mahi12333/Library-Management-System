@@ -2,7 +2,6 @@
 
 Library-Management-System is a user-friendly software solution for schools, companies, and libraries to efficiently manage book collections, track borrowing, and monitor due dates. It streamlines operations, reduces errors, and enhances the lending experience, making it easy to maintain a well-organized library.
 
-#### Checkout [Frontend]() Repository
 
 ## Project Structure 📂
 Checkout [Project Structure](https://github.com/ajaynegi45/LibraryMan-API/tree/main/project-structure) Diagram

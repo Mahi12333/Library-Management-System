@@ -13,6 +13,8 @@ public class BookUpdateDTO {
     private Long id;
     private String title;
     private String author;
+    private String publisher;
+    private String language;
     private String isbn;
     private BookStatus status;
     private Integer bookCount;

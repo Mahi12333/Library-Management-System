@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
+//@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 @Slf4j
 @Tag(name = "BookBorrowControllerController", description = "Book Borrow Management")
 @RestController

@@ -174,7 +174,7 @@ public class AuthController {
     }
 
     @Operation(summary = "Photo Upload ", description = "This API is photo upload")
-    @PostMapping(value = "/public/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Transactional
     public ResponseEntity<String> imageupload(@RequestPart("profile") MultipartFile profile,
                                                          @RequestPart("idProof") MultipartFile idProof) throws IOException {
@@ -184,7 +184,7 @@ public class AuthController {
     }
 
     @Operation(summary = "Create a user-signup ", description = "This API is used to user-signup")
-    @PostMapping(value = "/public/signup", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(value = "/signup", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Transactional
     public ResponseEntity<UserInfoResponse> registerUser(
             @RequestPart("signupDTO") @Valid String signupDTO,
@@ -302,14 +302,14 @@ public class AuthController {
     }
 
     @Operation(summary = "Request Password Reset", description = "Generates a password reset token and sends email.")
-    @PostMapping("/public/forgot-password")
+    @PostMapping("/forgot-password")
     public ResponseEntity<?> forgotPassword(@Valid @RequestBody ForgotPasswordDTO request) {
         userService.generatePasswordResetToken(request.getEmail());
         return ResponseEntity.ok("Password reset email sent!");
     }
 
     @Operation(summary = "Reset Password", description = "Resets the password using the token.")
-    @PostMapping("/public/reset-password")
+    @PostMapping("/reset-password")
     public ResponseEntity<?> resetPasswords(@Valid @RequestBody ResetPasswordDTO request) {
         userService.resetPassword(request.getToken(), request.getNewPassword(), request.getComPassword());
         return ResponseEntity.ok("Password has been reset successfully!");

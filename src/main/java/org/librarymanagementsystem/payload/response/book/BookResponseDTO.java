@@ -11,4 +11,6 @@ public class BookResponseDTO {
     private String author;
     private String isbn;
     private BookStatus status;
+    private String description;
+    private String category;
 }

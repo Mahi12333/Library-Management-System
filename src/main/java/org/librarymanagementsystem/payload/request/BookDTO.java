@@ -13,6 +13,8 @@ import java.time.LocalDateTime;
 public class BookDTO {
     private String title;
     private String author;
+    private String publisher;
+    private String language;
     private String isbn;
     private BookStatus status;
     private Integer bookCount;

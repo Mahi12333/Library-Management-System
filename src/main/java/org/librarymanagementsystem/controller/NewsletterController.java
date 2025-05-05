@@ -6,13 +6,11 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.librarymanagementsystem.payload.request.ContactUsDTO;
 import org.librarymanagementsystem.services.NewsletterService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @Tag(name = "NewsletterController", description = "Newsletter Management")
@@ -53,5 +51,28 @@ public class NewsletterController {
     public ResponseEntity<?> unsubscribe(@Valid @RequestParam  String email, String token){
         String result = newsletterService.unsubscribe(email, token);
         return new ResponseEntity<>(result,HttpStatus.OK);
+    }
+
+    @Operation(summary = "Contact Us details store ", description = "This is used for user contact details save")
+    @PostMapping("/contact-us")
+    public ResponseEntity<?> contactUs(@Valid @RequestBody ContactUsDTO request){
+        try {
+            String result = newsletterService.contactUs(request);
+
+            return switch (result) {
+
+                case "Your concerns unsuccessfully register!." ->
+                        ResponseEntity.status(HttpStatus.CONFLICT).body(result); // 409 Conflict
+
+                case "Your concerns successfully register!" ->
+                        ResponseEntity.status(HttpStatus.CREATED).body(result); // 201 Created
+
+                default -> ResponseEntity.status(HttpStatus.OK).body(result); // Default 200 OK
+            };
+        } catch (Exception e) {
+            // Handle unexpected errors
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("An error occurred while processing your subscription.");
+        }
     }
 }

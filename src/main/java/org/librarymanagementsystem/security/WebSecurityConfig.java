@@ -18,7 +18,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+
+import static org.springframework.security.config.Customizer.withDefaults;
+
 
 @Slf4j
 @Configuration
@@ -36,6 +38,7 @@ public class WebSecurityConfig {
                 csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                         .ignoringRequestMatchers("/api/auth/public/**")
         );*/
+         http.cors(withDefaults());
         //! Disable the Csrf Token
         http.csrf(AbstractHttpConfigurer::disable);
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
@@ -46,14 +49,15 @@ public class WebSecurityConfig {
                 .requestMatchers("/v3/api-docs/**").permitAll()
                 .requestMatchers("/swagger-ui/**").permitAll()
                 .requestMatchers("/v1/api/auth/user-login").hasAuthority("ROLE_STUDENT")
+                .requestMatchers("/v1/api/book/all-book").permitAll()
+                .requestMatchers("/v1/api/Newsletter/contact-us").permitAll()
                 // Admin-only endpoints
                 .requestMatchers("/v1/api/auth/admin-login").hasAuthority("ROLE_ADMIN")
                 .requestMatchers("/v1/api/analytics/**").hasAuthority("ROLE_ADMIN")
-                .requestMatchers("/v1/api/transitional/get-all-borrowings-of-a-member", "/v1/api/transitional/get-all-borrowings")
-                .hasAuthority("ROLE_ADMIN")
+//                .requestMatchers("/v1/api/transitional/get-all-borrowings-of-a-member", "/v1/api/transitional/get-all-borrowings")
+//                .hasAuthority("ROLE_ADMIN")
                 .requestMatchers("/v1/api/book/create", "/v1/api/book/delete", "/v1/api/book/edit", "/v1/api/book/update")
                 .hasAuthority("ROLE_ADMIN")
-
                 .anyRequest().authenticated());
 
         /*http.oauth2Login(oauth2 ->

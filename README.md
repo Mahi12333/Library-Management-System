@@ -14,7 +14,7 @@ Checkout [Project Structure](https://github.com/ajaynegi45/LibraryMan-API/tree/m
 Want to know more about our API endpoints? Check out our [API Documentation](https://github.com/ajaynegi45/LibraryMan-API/tree/main/api-docs) for detailed information.
 
 #### Test Endpoints
-Ready to try out our API endpoints? Use [Postman Documentation](https://documenter.getpostman.com/view/28691426/2sAXjJ6D7L) to test and explore our APIs.
+Ready to try out our API endpoints? Use [Swagger APi Documentation](https://github.com/Mahi12333/Library-Management-System/blob/main/api-docs/api-doc.json) to test and explore our APIs.
 
 ## How to Run the Project 💨
 
